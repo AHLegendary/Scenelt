@@ -136,7 +136,19 @@ This installs the project's dependencies using `package-lock.json`, including Re
 
 Run this during initial setup or when dependencies change.
 
-## 3. Verify Your Setup
+## 3. Configure Enviornment Variables
+
+Create a `.env` file, and copy the `.env.example` contents over to `.env` and add the values to the keys.
+It should look something like below the key-value pair below.
+
+```
+VITE_SUPABASE_URL=your-supabase-project-url
+VITE_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
+```
+
+Make sure that .env is not tracked in git status.
+
+## 4. Verify Your Setup
 
 Run the following commands from the project root:
 
@@ -255,7 +267,7 @@ Authenticate with GitHub:
 gh auth login
 ```
 
-### macOS (Zsh)
+### macOS (zsh or bash)
 
 1. Open your shell configuration:
 
@@ -269,7 +281,10 @@ gh auth login
 
    ```bash
    alias pr='gh pr create --web'
+   alias rt='npm run test:run'
+   alias rb='npm run build'
    ```
+   Note: you dont have to add rt and rb, but it will make it easier since you won't need to type the entire cmd.
 
 3. Reload your configuration:
 

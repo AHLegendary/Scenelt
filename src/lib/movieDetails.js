@@ -31,6 +31,15 @@ export function formatRuntime(minutes) {
   return m ? `${h}h ${m}m` : `${h}h`
 }
 
+// From a TMDb response that includes `recommendations`, the ids of catalog
+// movies TMDb recommends for this one, in TMDb's order. tmdbToId maps
+// TMDb ids to our catalog ids; movies outside the catalog are dropped.
+export function pickSimilar(raw = {}, tmdbToId = new Map()) {
+  const results = raw.recommendations?.results ?? []
+  const ids = results.map((r) => tmdbToId.get(r.id)).filter(Boolean)
+  return [...new Set(ids)]
+}
+
 // True once a movie has been through the details fetch.
 export function hasDetails(movie) {
   return Boolean(movie && 'overview' in movie)

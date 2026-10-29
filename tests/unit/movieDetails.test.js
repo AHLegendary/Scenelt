@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { formatRuntime, hasDetails, pickDetails } from '../../src/lib/movieDetails.js'
+import { formatRuntime, hasDetails, pickDetails, pickSimilar } from '../../src/lib/movieDetails.js'
 import { getCommunityStats, imageUrl } from '../../src/lib/localStore.js'
 
 describe('pickDetails', () => {
@@ -92,5 +92,19 @@ describe('imageUrl', () => {
   it('builds TMDb image URLs', () => {
     expect(imageUrl('/b.jpg', 'w780')).toBe('https://image.tmdb.org/t/p/w780/b.jpg')
     expect(imageUrl(null)).toBeNull()
+  })
+})
+
+describe('pickSimilar', () => {
+  const tmdbToId = new Map([[1, 'one-2001'], [2, 'two-2002'], [3, 'three-2003']])
+
+  it('keeps catalog movies in TMDb order and drops the rest', () => {
+    const raw = { recommendations: { results: [{ id: 3 }, { id: 99 }, { id: 1 }, { id: 3 }] } }
+    expect(pickSimilar(raw, tmdbToId)).toEqual(['three-2003', 'one-2001'])
+  })
+
+  it('is empty when TMDb has no recommendations', () => {
+    expect(pickSimilar({}, tmdbToId)).toEqual([])
+    expect(pickSimilar({ recommendations: { results: [] } }, tmdbToId)).toEqual([])
   })
 })

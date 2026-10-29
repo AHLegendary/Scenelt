@@ -7,7 +7,7 @@ export default function Sidebar({ current, onNavigate }) {
     <nav className="sidebar" aria-label="Main">
       <span className="logo">
         <img className="logo__mark" src="/favicon.svg" alt="" width="28" height="28" />
-        SceneIt
+        <span className="logo__text">SceneIt</span>
       </span>
       <div className="sidebar__tabs">
         {PAGES.map((page) => (

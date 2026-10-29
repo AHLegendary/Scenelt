@@ -14,6 +14,11 @@ const BY_ID = new Map(MOVIES.map((m) => [m.id, m]))
 
 // ------------------------------------------------------------------ catalog
 
+// Every movie in the local catalog.
+export function getCatalog() {
+  return MOVIES
+}
+
 export function getMovie(id) {
   return BY_ID.get(id) || null
 }

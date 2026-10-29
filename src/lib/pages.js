@@ -2,4 +2,5 @@
 export const PAGES = [
   { id: 'leaderboard', label: 'Leaderboard' },
   { id: 'my-list', label: 'My List' },
+  { id: 'for-you', label: 'For You' },
 ]

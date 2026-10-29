@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "posters": "node scripts/fetch-posters.mjs"
+    "movie-data": "node scripts/fetch-movie-data.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

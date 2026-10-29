@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import './App.css'
+import MovieDetails from './components/MovieDetails.jsx'
 import SearchDialog from './components/SearchDialog.jsx'
 import CompareView from './features/ranking/CompareView.jsx'
 import Sidebar from './components/Sidebar.jsx'
+import { getMovie } from './lib/localStore.js'
 import { PAGES } from './lib/pages.js'
 import LeaderboardPage from './pages/LeaderboardPage.jsx'
 import MyListPage from './pages/MyListPage.jsx'
@@ -24,14 +26,20 @@ function App() {
   // Movie being placed head-to-head: { movie, rerank }
   const [ranking, setRanking] = useState(null)
   const [justRanked, setJustRanked] = useState(null)
+  const [detailsId, setDetailsId] = useState(null)
+  const openDetails = useCallback((id) => setDetailsId(id), [])
+  const closeDetails = useCallback(() => setDetailsId(null), [])
+  const detailsMovie = detailsId ? getMovie(detailsId) : null
 
   // Picking a movie in search starts the head-to-head flow for it.
   function startRanking(movie) {
     setSearchOpen(false)
+    setDetailsId(null)
     setRanking({ movie, rerank: false })
   }
 
   function startRerank(movie) {
+    setDetailsId(null)
     setRanking({ movie, rerank: true })
   }
 
@@ -62,13 +70,20 @@ function App() {
             Guest
           </span>
         </div>
-        {page === 'my-list' ? <MyListPage onAdd={openSearch} onRerank={startRerank} highlightId={justRanked} /> : <LeaderboardPage />}
+        {page === 'my-list' ? (
+          <MyListPage onAdd={openSearch} onRerank={startRerank} onOpen={openDetails} highlightId={justRanked} />
+        ) : (
+          <LeaderboardPage onOpen={openDetails} />
+        )}
         <footer className="credit">
           Movie data from <a href="https://www.themoviedb.org" target="_blank" rel="noreferrer">TMDB</a>.
           This product uses the TMDB API but is not endorsed or certified by TMDB.
         </footer>
       </main>
-      {searchOpen && <SearchDialog onClose={closeSearch} onPick={startRanking} />}
+      {searchOpen && <SearchDialog onClose={closeSearch} onPick={startRanking} onOpen={openDetails} />}
+      {detailsMovie && (
+        <MovieDetails movie={detailsMovie} onClose={closeDetails} onRank={startRanking} onRerank={startRerank} />
+      )}
       {ranking && (
         <CompareView
           key={`${ranking.movie.id}-${ranking.rerank}`}

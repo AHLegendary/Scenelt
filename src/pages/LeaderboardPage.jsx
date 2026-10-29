@@ -12,7 +12,7 @@ const CATEGORY_OPTIONS = [
   { id: 'watched', label: 'Most watched' },
 ]
 
-export default function LeaderboardPage() {
+export default function LeaderboardPage({ onOpen }) {
   const [period, setPeriod] = useState('weekly')
   const [category, setCategory] = useState('highest')
   const rows = getLeaderboard(period, category)
@@ -32,11 +32,13 @@ export default function LeaderboardPage() {
 
       <ol className="board" key={`${period}-${category}`}>
         {rows.map((movie) => (
-          <li className={`row${movie.rank <= 3 ? ' is-top' : ''}`} key={movie.id}>
+          <li className={`row row--link${movie.rank <= 3 ? ' is-top' : ''}`} key={movie.id} onClick={() => onOpen(movie.id)}>
             <span className="row__rank">{movie.rank}</span>
             <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
             <div className="row__info">
-              <span className="row__title">{movie.title}</span>
+              <button type="button" className="row__title row__link" onClick={(e) => { e.stopPropagation(); onOpen(movie.id) }}>
+                {movie.title}
+              </button>
               <span className="row__meta">{movie.year}</span>
             </div>
             <div className="row__stat">

@@ -6,6 +6,7 @@ import {
   getLeaderboard,
   getMovie,
   getMyList,
+  insertMovie,
   isInList,
   PERIODS,
   posterUrl,
@@ -118,6 +119,21 @@ describe('my list', () => {
 
   it('rejects movies that are not in the catalog', () => {
     expect(() => addMovie('not-a-movie', memoryStorage())).toThrow()
+  })
+
+  it('inserts a movie at a given position', () => {
+    const storage = memoryStorage()
+    for (const id of ['whiplash-2014', 'up-2009']) addMovie(id, storage)
+    insertMovie('parasite-2019', 1, storage)
+    insertMovie('coco-2017', 0, storage)
+    expect(ids(getMyList(storage))).toEqual(['coco-2017', 'whiplash-2014', 'parasite-2019', 'up-2009'])
+  })
+
+  it('clamps out-of-range positions', () => {
+    const storage = memoryStorage()
+    insertMovie('whiplash-2014', 99, storage)
+    insertMovie('up-2009', -3, storage)
+    expect(ids(getMyList(storage))).toEqual(['up-2009', 'whiplash-2014'])
   })
 
   it('removes a movie and keeps the rest in order', () => {

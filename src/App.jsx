@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import './App.css'
 import SearchDialog from './components/SearchDialog.jsx'
+import CompareView from './features/ranking/CompareView.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import { PAGES } from './lib/pages.js'
 import LeaderboardPage from './pages/LeaderboardPage.jsx'
@@ -20,6 +21,21 @@ function App() {
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearch = useCallback(() => setSearchOpen(true), [])
   const closeSearch = useCallback(() => setSearchOpen(false), [])
+  const [ranking, setRanking] = useState(null) // movie being placed head-to-head
+  const [justRanked, setJustRanked] = useState(null)
+
+  // Picking a movie in search starts the head-to-head flow for it.
+  function startRanking(movie) {
+    setSearchOpen(false)
+    setRanking(movie)
+  }
+
+  function finishRanking({ next }) {
+    setJustRanked(ranking.id)
+    setRanking(null)
+    if (next === 'search') setSearchOpen(true)
+    else navigate('my-list')
+  }
 
   useEffect(() => {
     const onHash = () => setPage(pageFromHash())
@@ -41,13 +57,22 @@ function App() {
             Guest
           </span>
         </div>
-        {page === 'my-list' ? <MyListPage onAdd={openSearch} /> : <LeaderboardPage />}
+        {page === 'my-list' ? <MyListPage onAdd={openSearch} highlightId={justRanked} /> : <LeaderboardPage />}
         <footer className="credit">
           Movie data from <a href="https://www.themoviedb.org" target="_blank" rel="noreferrer">TMDB</a>.
           This product uses the TMDB API but is not endorsed or certified by TMDB.
         </footer>
       </main>
-      {searchOpen && <SearchDialog onClose={closeSearch} />}
+      {searchOpen && <SearchDialog onClose={closeSearch} onPick={startRanking} />}
+      {ranking && (
+        <CompareView
+          key={ranking.id}
+          movie={ranking}
+          onClose={() => setRanking(null)}
+          onRankAnother={() => finishRanking({ next: 'search' })}
+          onSeeList={() => finishRanking({ next: 'list' })}
+        />
+      )}
     </div>
   )
 }

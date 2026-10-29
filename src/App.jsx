@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import './App.css'
+import SearchDialog from './components/SearchDialog.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import { PAGES } from './lib/pages.js'
 import LeaderboardPage from './pages/LeaderboardPage.jsx'
@@ -16,6 +17,9 @@ function pageFromHash() {
 
 function App() {
   const [page, setPage] = useState(pageFromHash)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const openSearch = useCallback(() => setSearchOpen(true), [])
+  const closeSearch = useCallback(() => setSearchOpen(false), [])
 
   useEffect(() => {
     const onHash = () => setPage(pageFromHash())
@@ -37,8 +41,13 @@ function App() {
             Guest
           </span>
         </div>
-        {page === 'my-list' ? <MyListPage /> : <LeaderboardPage />}
+        {page === 'my-list' ? <MyListPage onAdd={openSearch} /> : <LeaderboardPage />}
+        <footer className="credit">
+          Movie data from <a href="https://www.themoviedb.org" target="_blank" rel="noreferrer">TMDB</a>.
+          This product uses the TMDB API but is not endorsed or certified by TMDB.
+        </footer>
       </main>
+      {searchOpen && <SearchDialog onClose={closeSearch} />}
     </div>
   )
 }

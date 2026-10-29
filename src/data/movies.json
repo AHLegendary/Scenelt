@@ -1,0 +1,657 @@
+[
+  {
+    "id": "dune-part-two-2024",
+    "title": "Dune: Part Two",
+    "year": 2024,
+    "genres": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "poster_path": "/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
+    "tmdb_id": 693134
+  },
+  {
+    "id": "past-lives-2023",
+    "title": "Past Lives",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": "/k3waqVXSnvCZWfJYNtdamTgTtTA.jpg",
+    "tmdb_id": 666277
+  },
+  {
+    "id": "spider-man-across-the-spider-verse-2023",
+    "title": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "poster_path": "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+    "tmdb_id": 569094
+  },
+  {
+    "id": "oppenheimer-2023",
+    "title": "Oppenheimer",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+    "tmdb_id": 872585
+  },
+  {
+    "id": "the-holdovers-2023",
+    "title": "The Holdovers",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": "/VHSzNBTwxV8vh7wylo7O9CLdac.jpg",
+    "tmdb_id": 840430
+  },
+  {
+    "id": "everything-everywhere-all-at-once-2022",
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "poster_path": "/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
+    "tmdb_id": 545611
+  },
+  {
+    "id": "parasite-2019",
+    "title": "Parasite",
+    "year": 2019,
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "poster_path": "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "tmdb_id": 496243
+  },
+  {
+    "id": "whiplash-2014",
+    "title": "Whiplash",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "poster_path": "/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
+    "tmdb_id": 244786
+  },
+  {
+    "id": "anatomy-of-a-fall-2023",
+    "title": "Anatomy of a Fall",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "poster_path": "/1ho0d4LNZw3Y0voeKmSvPSgJOJ2.jpg",
+    "tmdb_id": 915935
+  },
+  {
+    "id": "poor-things-2023",
+    "title": "Poor Things",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Science Fiction"
+    ],
+    "poster_path": "/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg",
+    "tmdb_id": 792307
+  },
+  {
+    "id": "interstellar-2014",
+    "title": "Interstellar",
+    "year": 2014,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "poster_path": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+    "tmdb_id": 157336
+  },
+  {
+    "id": "the-dark-knight-2008",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "poster_path": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+    "tmdb_id": 155
+  },
+  {
+    "id": "get-out-2017",
+    "title": "Get Out",
+    "year": 2017,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "poster_path": "/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
+    "tmdb_id": 419430
+  },
+  {
+    "id": "la-la-land-2016",
+    "title": "La La Land",
+    "year": 2016,
+    "genres": [
+      "Romance",
+      "Music"
+    ],
+    "poster_path": "/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
+    "tmdb_id": 313369
+  },
+  {
+    "id": "inception-2010",
+    "title": "Inception",
+    "year": 2010,
+    "genres": [
+      "Science Fiction",
+      "Action"
+    ],
+    "poster_path": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+    "tmdb_id": 27205
+  },
+  {
+    "id": "pulp-fiction-1994",
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "poster_path": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
+    "tmdb_id": 680
+  },
+  {
+    "id": "the-godfather-1972",
+    "title": "The Godfather",
+    "year": 1972,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "poster_path": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+    "tmdb_id": 238
+  },
+  {
+    "id": "the-shawshank-redemption-1994",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+    "tmdb_id": 278
+  },
+  {
+    "id": "fight-club-1999",
+    "title": "Fight Club",
+    "year": 1999,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "poster_path": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
+    "tmdb_id": 550
+  },
+  {
+    "id": "the-matrix-1999",
+    "title": "The Matrix",
+    "year": 1999,
+    "genres": [
+      "Science Fiction",
+      "Action"
+    ],
+    "poster_path": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+    "tmdb_id": 603
+  },
+  {
+    "id": "spirited-away-2001",
+    "title": "Spirited Away",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Fantasy"
+    ],
+    "poster_path": "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+    "tmdb_id": 129
+  },
+  {
+    "id": "barbie-2023",
+    "title": "Barbie",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Fantasy"
+    ],
+    "poster_path": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+    "tmdb_id": 346698
+  },
+  {
+    "id": "toy-story-1995",
+    "title": "Toy Story",
+    "year": 1995,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": "/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+    "tmdb_id": 862
+  },
+  {
+    "id": "titanic-1997",
+    "title": "Titanic",
+    "year": 1997,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+    "tmdb_id": 597
+  },
+  {
+    "id": "the-social-network-2010",
+    "title": "The Social Network",
+    "year": 2010,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": "/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg",
+    "tmdb_id": 37799
+  },
+  {
+    "id": "her-2013",
+    "title": "Her",
+    "year": 2013,
+    "genres": [
+      "Romance",
+      "Science Fiction"
+    ],
+    "poster_path": "/eCOtqtfvn7mxGl6nfmq4b1exJRc.jpg",
+    "tmdb_id": 152601
+  },
+  {
+    "id": "arrival-2016",
+    "title": "Arrival",
+    "year": 2016,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "poster_path": "/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg",
+    "tmdb_id": 329865
+  },
+  {
+    "id": "mad-max-fury-road-2015",
+    "title": "Mad Max: Fury Road",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "poster_path": "/ulcAi4dKpAjHwYGS08vNyx9H6I9.jpg",
+    "tmdb_id": 76341
+  },
+  {
+    "id": "knives-out-2019",
+    "title": "Knives Out",
+    "year": 2019,
+    "genres": [
+      "Mystery",
+      "Comedy"
+    ],
+    "poster_path": "/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+    "tmdb_id": 546554
+  },
+  {
+    "id": "lady-bird-2017",
+    "title": "Lady Bird",
+    "year": 2017,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": "/gl66K7zRdtNYGrxyS2YDUP5ASZd.jpg",
+    "tmdb_id": 391713
+  },
+  {
+    "id": "moonlight-2016",
+    "title": "Moonlight",
+    "year": 2016,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": "/qLnfEmPrDjJfPyyddLJPkXmshkp.jpg",
+    "tmdb_id": 376867
+  },
+  {
+    "id": "inside-out-2015",
+    "title": "Inside Out",
+    "year": 2015,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
+    "tmdb_id": 150540
+  },
+  {
+    "id": "up-2009",
+    "title": "Up",
+    "year": 2009,
+    "genres": [
+      "Animation",
+      "Adventure"
+    ],
+    "poster_path": "/mFvoEwSfLqbcWwFsDjQebn9bzFe.jpg",
+    "tmdb_id": 14160
+  },
+  {
+    "id": "coco-2017",
+    "title": "Coco",
+    "year": 2017,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": "/6Ryitt95xrO8KXuqRGm1fUuNwqF.jpg",
+    "tmdb_id": 354912
+  },
+  {
+    "id": "the-grand-budapest-hotel-2014",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": "/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
+    "tmdb_id": 120467
+  },
+  {
+    "id": "blade-runner-2049-2017",
+    "title": "Blade Runner 2049",
+    "year": 2017,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "poster_path": "/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+    "tmdb_id": 335984
+  },
+  {
+    "id": "top-gun-maverick-2022",
+    "title": "Top Gun: Maverick",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "poster_path": "/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg",
+    "tmdb_id": 361743
+  },
+  {
+    "id": "little-women-2019",
+    "title": "Little Women",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": "/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg",
+    "tmdb_id": 331482
+  },
+  {
+    "id": "amelie-2001",
+    "title": "Amélie",
+    "year": 2001,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "poster_path": "/nSxDa3M9aMvGVLoItzWTepQ5h5d.jpg",
+    "tmdb_id": 194
+  },
+  {
+    "id": "no-country-for-old-men-2007",
+    "title": "No Country for Old Men",
+    "year": 2007,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "poster_path": "/6d5XOczc226jECq0LIX0siKtgHR.jpg",
+    "tmdb_id": 6977
+  },
+  {
+    "id": "goodfellas-1990",
+    "title": "Goodfellas",
+    "year": 1990,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "poster_path": "/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg",
+    "tmdb_id": 769
+  },
+  {
+    "id": "jurassic-park-1993",
+    "title": "Jurassic Park",
+    "year": 1993,
+    "genres": [
+      "Adventure",
+      "Science Fiction"
+    ],
+    "poster_path": "/d9mtMGQDLANKieb9PbD3yK7xxzo.jpg",
+    "tmdb_id": 329
+  },
+  {
+    "id": "the-lord-of-the-rings-the-fellowship-of-the-ring-2001",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "poster_path": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+    "tmdb_id": 120
+  },
+  {
+    "id": "back-to-the-future-1985",
+    "title": "Back to the Future",
+    "year": 1985,
+    "genres": [
+      "Science Fiction",
+      "Comedy"
+    ],
+    "poster_path": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
+    "tmdb_id": 105
+  },
+  {
+    "id": "ratatouille-2007",
+    "title": "Ratatouille",
+    "year": 2007,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "poster_path": "/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg",
+    "tmdb_id": 2062
+  },
+  {
+    "id": "black-swan-2010",
+    "title": "Black Swan",
+    "year": 2010,
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "poster_path": "/viWheBd44bouiLCHgNMvahLThqx.jpg",
+    "tmdb_id": 44214
+  },
+  {
+    "id": "the-truman-show-1998",
+    "title": "The Truman Show",
+    "year": 1998,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": "/vuza0WqY239yBXOadKlGwJsZJFE.jpg",
+    "tmdb_id": 37165
+  },
+  {
+    "id": "superbad-2007",
+    "title": "Superbad",
+    "year": 2007,
+    "genres": [
+      "Comedy"
+    ],
+    "poster_path": "/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg",
+    "tmdb_id": 8363
+  },
+  {
+    "id": "hereditary-2018",
+    "title": "Hereditary",
+    "year": 2018,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "poster_path": "/4GFPuL14eXi66V96xBWY73Y9PfR.jpg",
+    "tmdb_id": 493922
+  },
+  {
+    "id": "aftersun-2022",
+    "title": "Aftersun",
+    "year": 2022,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": "/evKz85EKouVbIr51zy5fOtpNRPg.jpg",
+    "tmdb_id": 965150
+  },
+  {
+    "id": "challengers-2024",
+    "title": "Challengers",
+    "year": 2024,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": "/H6vke7zGiuLsz4v4RPeReb9rsv.jpg",
+    "tmdb_id": 937287
+  },
+  {
+    "id": "wicked-2024",
+    "title": "Wicked",
+    "year": 2024,
+    "genres": [
+      "Fantasy",
+      "Music"
+    ],
+    "poster_path": "/xDGbZ0JJ3mYaGKy4Nzd9Kph6M9L.jpg",
+    "tmdb_id": 402431
+  },
+  {
+    "id": "inside-out-2-2024",
+    "title": "Inside Out 2",
+    "year": 2024,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+    "tmdb_id": 1022789
+  },
+  {
+    "id": "gladiator-2000",
+    "title": "Gladiator",
+    "year": 2000,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "poster_path": "/aDb548BOkFfI4nFm0kx8A3Ezh7H.jpg",
+    "tmdb_id": 98
+  },
+  {
+    "id": "avengers-endgame-2019",
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Science Fiction"
+    ],
+    "poster_path": "/bR8ISy1O9XQxqiy0fQFw2BX72RQ.jpg",
+    "tmdb_id": 299534
+  },
+  {
+    "id": "shrek-2001",
+    "title": "Shrek",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "poster_path": "/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg",
+    "tmdb_id": 808
+  },
+  {
+    "id": "the-silence-of-the-lambs-1991",
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "genres": [
+      "Thriller",
+      "Crime"
+    ],
+    "poster_path": "/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
+    "tmdb_id": 274
+  },
+  {
+    "id": "princess-mononoke-1997",
+    "title": "Princess Mononoke",
+    "year": 1997,
+    "genres": [
+      "Animation",
+      "Fantasy"
+    ],
+    "poster_path": "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
+    "tmdb_id": 128
+  },
+  {
+    "id": "portrait-of-a-lady-on-fire-2019",
+    "title": "Portrait of a Lady on Fire",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": "/2LquGwEhbg3soxSCs9VNyh5VJd9.jpg",
+    "tmdb_id": 531428
+  },
+  {
+    "id": "spider-man-into-the-spider-verse-2018",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "poster_path": "/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
+    "tmdb_id": 324857
+  }
+]

@@ -5,7 +5,10 @@ import { PAGES } from '../lib/pages.js'
 export default function Sidebar({ current, onNavigate }) {
   return (
     <nav className="sidebar" aria-label="Main">
-      <span className="logo">SceneIt</span>
+      <span className="logo">
+        <img className="logo__mark" src="/favicon.svg" alt="" width="28" height="28" />
+        SceneIt
+      </span>
       <div className="sidebar__tabs">
         {PAGES.map((page) => (
           <button

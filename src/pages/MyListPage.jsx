@@ -1,10 +1,10 @@
 import Poster from '../components/Poster.jsx'
-import { getMyList } from '../lib/localStore.js'
+import { posterUrl, removeMovie } from '../lib/localStore.js'
+import { useMyList } from '../lib/useMyList.js'
 
-// The guest's own ranked list. Starts empty; "Add a movie" opens search
-// (onAdd is wired up once movie search lands).
+// The guest's own ranked list. Starts empty; "Add a movie" opens search.
 export default function MyListPage({ onAdd }) {
-  const list = getMyList()
+  const list = useMyList()
 
   return (
     <section className="page">
@@ -18,7 +18,7 @@ export default function MyListPage({ onAdd }) {
           </p>
         </div>
         {list.length > 0 && (
-          <button type="button" className="btn" onClick={onAdd} disabled={!onAdd}>
+          <button type="button" className="btn" onClick={onAdd}>
             Add a movie
           </button>
         )}
@@ -34,21 +34,28 @@ export default function MyListPage({ onAdd }) {
             Add a movie you've watched to start your ranking. After the first one,
             SceneIt asks you to compare each new movie head-to-head.
           </p>
-          <button type="button" className="btn" onClick={onAdd} disabled={!onAdd}>
+          <button type="button" className="btn" onClick={onAdd}>
             Add a movie
           </button>
-          {!onAdd && <p className="empty__note">Movie search is on the way.</p>}
         </div>
       ) : (
         <ol className="board">
           {list.map((movie, i) => (
             <li className="row" key={movie.id}>
               <span className="row__rank">{i + 1}</span>
-              <Poster title={movie.title} src={movie.poster} size="sm" />
+              <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
               <div className="row__info">
                 <span className="row__title">{movie.title}</span>
                 <span className="row__meta">{movie.year}</span>
               </div>
+              <button
+                type="button"
+                className="row__remove"
+                onClick={() => removeMovie(movie.id)}
+                aria-label={`Remove ${movie.title}`}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ol>

@@ -168,6 +168,19 @@ The development server is for local development and manual testing, not automate
 
 If the tests and build succeed and the application runs locally, you're ready to start contributing.
 
+## Demo Movie Data
+
+The local demo runs on a fixed catalog in `src/data/movies.json` and stores the guest's list in localStorage (see `src/lib/localStore.js`). No TMDb calls happen at runtime.
+
+To fill in real posters, add `TMDB_READ_TOKEN` to your `.env` and run:
+
+```bash
+npm run posters          # only movies without a poster yet
+npm run posters -- --all # refresh every movie
+```
+
+Then commit the updated `movies.json`. Movies without a poster show a placeholder card.
+
 ## Development Workflow
 
 ### 1. Create a Feature Branch

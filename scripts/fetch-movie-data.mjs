@@ -4,7 +4,8 @@
 // For each movie it:
 //   1. searches TMDb by title + year to get tmdb_id and poster_path
 //   2. loads details + credits for overview, tagline, runtime, backdrop,
-//      directors and top cast
+//      directors and top cast, plus TMDb's recommendations for it (kept as
+//      `similar`: the catalog movies TMDb recommends, used for "For You")
 // Movies that already have that data are skipped, so re-running is cheap.
 //
 // Usage (needs TMDB_READ_TOKEN in .env or the environment):
@@ -14,7 +15,7 @@
 // Then commit the updated movies.json.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-import { hasDetails, pickDetails } from '../src/lib/movieDetails.js'
+import { hasDetails, pickDetails, pickSimilar } from '../src/lib/movieDetails.js'
 
 const CATALOG = new URL('../src/data/movies.json', import.meta.url)
 const ENV_FILE = new URL('../.env', import.meta.url)
@@ -58,27 +59,39 @@ const problems = []
 let found = 0
 let detailed = 0
 
+// Pass 1: make sure every movie has a TMDb id and poster.
 for (const movie of movies) {
+  if (!refreshAll && movie.tmdb_id && movie.poster_path) continue
   const label = `${movie.title} (${movie.year})`
   try {
-    if (refreshAll || !movie.tmdb_id || !movie.poster_path) {
-      const hit = await search(token, movie.title, movie.year)
-      await pause()
-      if (!hit) {
-        problems.push(`${label}: not found on TMDb`)
-        continue
-      }
-      movie.tmdb_id = hit.id
-      movie.poster_path = hit.poster_path || movie.poster_path || null
-      found += 1
+    const hit = await search(token, movie.title, movie.year)
+    await pause()
+    if (!hit) {
+      problems.push(`${label}: not found on TMDb`)
+      continue
     }
-    if (refreshAll || !hasDetails(movie)) {
-      const raw = await tmdb(token, `/movie/${movie.tmdb_id}`, { append_to_response: 'credits' })
-      await pause()
-      Object.assign(movie, pickDetails(raw))
-      detailed += 1
-      console.log(`✓ ${label}`)
-    }
+    movie.tmdb_id = hit.id
+    movie.poster_path = hit.poster_path || movie.poster_path || null
+    found += 1
+  } catch (err) {
+    problems.push(`${label}: ${err.message}`)
+  }
+}
+
+// Pass 2: details, credits and recommendations in one request per movie.
+// Needs every tmdb_id from pass 1 to match recommendations to the catalog.
+const tmdbToId = new Map(movies.filter((m) => m.tmdb_id).map((m) => [m.tmdb_id, m.id]))
+for (const movie of movies) {
+  if (!movie.tmdb_id) continue
+  if (!refreshAll && hasDetails(movie) && Array.isArray(movie.similar)) continue
+  const label = `${movie.title} (${movie.year})`
+  try {
+    const raw = await tmdb(token, `/movie/${movie.tmdb_id}`, { append_to_response: 'credits,recommendations' })
+    await pause()
+    Object.assign(movie, pickDetails(raw))
+    movie.similar = pickSimilar(raw, tmdbToId)
+    detailed += 1
+    console.log(`✓ ${label}${movie.similar.length ? ` (${movie.similar.length} similar)` : ''}`)
   } catch (err) {
     problems.push(`${label}: ${err.message}`)
   }

@@ -6,6 +6,7 @@ import CompareView from './features/ranking/CompareView.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import { getMovie } from './lib/localStore.js'
 import { PAGES } from './lib/pages.js'
+import ForYouPage from './pages/ForYouPage.jsx'
 import LeaderboardPage from './pages/LeaderboardPage.jsx'
 import MyListPage from './pages/MyListPage.jsx'
 
@@ -72,6 +73,8 @@ function App() {
         </div>
         {page === 'my-list' ? (
           <MyListPage onAdd={openSearch} onRerank={startRerank} onOpen={openDetails} highlightId={justRanked} />
+        ) : page === 'for-you' ? (
+          <ForYouPage onOpen={openDetails} onAdd={openSearch} />
         ) : (
           <LeaderboardPage onOpen={openDetails} />
         )}

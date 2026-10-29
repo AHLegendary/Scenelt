@@ -23,7 +23,8 @@
       "Javier Bardem",
       "Josh Brolin",
       "Austin Butler"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "past-lives-2023",
@@ -49,7 +50,8 @@
       "Moon Seung-ah",
       "Leem Seung-min",
       "Yoon Ji-hye"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "spider-man-across-the-spider-verse-2023",
@@ -77,6 +79,9 @@
       "Brian Tyree Henry",
       "Luna Lauren Vélez",
       "Jake Johnson"
+    ],
+    "similar": [
+      "spider-man-into-the-spider-verse-2018"
     ]
   },
   {
@@ -103,7 +108,8 @@
       "Robert Downey Jr.",
       "Florence Pugh",
       "Josh Hartnett"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-holdovers-2023",
@@ -129,7 +135,8 @@
       "Carrie Preston",
       "Brady Hepner",
       "Ian Dolley"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "everything-everywhere-all-at-once-2022",
@@ -156,7 +163,8 @@
       "James Hong",
       "Jamie Lee Curtis",
       "Tallie Medel"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "parasite-2019",
@@ -182,7 +190,8 @@
       "Choi Woo-shik",
       "Park So-dam",
       "Lee Jung-eun"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "whiplash-2014",
@@ -208,7 +217,8 @@
       "Melissa Benoist",
       "Austin Stowell",
       "Nate Lang"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "anatomy-of-a-fall-2023",
@@ -234,7 +244,8 @@
       "Antoine Reinartz",
       "Samuel Theis",
       "Jehnny Beth"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "poor-things-2023",
@@ -260,7 +271,8 @@
       "Ramy Youssef",
       "Christopher Abbott",
       "Suzy Bemba"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "interstellar-2014",
@@ -286,6 +298,9 @@
       "Jessica Chastain",
       "Casey Affleck",
       "Wes Bentley"
+    ],
+    "similar": [
+      "avengers-endgame-2019"
     ]
   },
   {
@@ -312,7 +327,8 @@
       "Michael Caine",
       "Maggie Gyllenhaal",
       "Gary Oldman"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "get-out-2017",
@@ -338,7 +354,8 @@
       "Bradley Whitford",
       "Caleb Landry Jones",
       "Marcus Henderson"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "la-la-land-2016",
@@ -364,7 +381,8 @@
       "Rosemarie DeWitt",
       "Finn Wittrock",
       "Callie Hernandez"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "inception-2010",
@@ -390,7 +408,8 @@
       "Tom Hardy",
       "Elliot Page",
       "Dileep Rao"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "pulp-fiction-1994",
@@ -416,7 +435,8 @@
       "Bruce Willis",
       "Ving Rhames",
       "Harvey Keitel"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-godfather-1972",
@@ -442,6 +462,9 @@
       "Robert Duvall",
       "Richard S. Castellano",
       "Diane Keaton"
+    ],
+    "similar": [
+      "goodfellas-1990"
     ]
   },
   {
@@ -467,6 +490,9 @@
       "William Sadler",
       "Clancy Brown",
       "Gil Bellows"
+    ],
+    "similar": [
+      "goodfellas-1990"
     ]
   },
   {
@@ -493,7 +519,8 @@
       "Meat Loaf",
       "Jared Leto",
       "Zach Grenier"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-matrix-1999",
@@ -520,7 +547,8 @@
       "Hugo Weaving",
       "Gloria Foster",
       "Joe Pantoliano"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "spirited-away-2001",
@@ -546,7 +574,8 @@
       "Takashi Naito",
       "Yasuko Sawaguchi",
       "Tatsuya Gashuin"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "barbie-2023",
@@ -572,7 +601,8 @@
       "Ariana Greenblatt",
       "Issa Rae",
       "Kate McKinnon"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "toy-story-1995",
@@ -598,7 +628,8 @@
       "Jim Varney",
       "Wallace Shawn",
       "John Ratzenberger"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "titanic-1997",
@@ -624,7 +655,8 @@
       "Kathy Bates",
       "Frances Fisher",
       "Gloria Stuart"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-social-network-2010",
@@ -649,7 +681,8 @@
       "Justin Timberlake",
       "Rooney Mara",
       "Max Minghella"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "her-2013",
@@ -675,6 +708,10 @@
       "Lisa Renee Pitts",
       "Gabe Gomez",
       "Chris Pratt"
+    ],
+    "similar": [
+      "arrival-2016",
+      "interstellar-2014"
     ]
   },
   {
@@ -701,6 +738,9 @@
       "Michael Stuhlbarg",
       "Mark O'Brien",
       "Tzi Ma"
+    ],
+    "similar": [
+      "interstellar-2014"
     ]
   },
   {
@@ -727,7 +767,8 @@
       "Hugh Keays-Byrne",
       "Josh Helman",
       "Nathan Jones"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "knives-out-2019",
@@ -753,7 +794,8 @@
       "Jamie Lee Curtis",
       "Michael Shannon",
       "Don Johnson"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "lady-bird-2017",
@@ -779,7 +821,8 @@
       "Lucas Hedges",
       "Timothée Chalamet",
       "Beanie Feldstein"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "moonlight-2016",
@@ -804,7 +847,8 @@
       "Ashton Sanders",
       "Jharrel Jerome",
       "Alex R. Hibbert"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "inside-out-2015",
@@ -830,6 +874,10 @@
       "Bill Hader",
       "Lewis Black",
       "Mindy Kaling"
+    ],
+    "similar": [
+      "inside-out-2-2024",
+      "up-2009"
     ]
   },
   {
@@ -856,6 +904,9 @@
       "Bob Peterson",
       "Delroy Lindo",
       "Jerome Ranft"
+    ],
+    "similar": [
+      "inside-out-2-2024"
     ]
   },
   {
@@ -882,6 +933,9 @@
       "Alanna Ubach",
       "Renée Victor",
       "Jaime Camil"
+    ],
+    "similar": [
+      "up-2009"
     ]
   },
   {
@@ -908,7 +962,8 @@
       "Adrien Brody",
       "Willem Dafoe",
       "Mathieu Amalric"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "blade-runner-2049-2017",
@@ -934,7 +989,8 @@
       "Dave Bautista",
       "Robin Wright",
       "Sylvia Hoeks"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "top-gun-maverick-2022",
@@ -960,7 +1016,8 @@
       "Bashir Salahuddin",
       "Jon Hamm",
       "Charles Parnell"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "little-women-2019",
@@ -986,7 +1043,8 @@
       "Eliza Scanlen",
       "Laura Dern",
       "Timothée Chalamet"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "amelie-2001",
@@ -1012,7 +1070,8 @@
       "Serge Merlin",
       "Jamel Debbouze",
       "Clotilde Mollet"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "no-country-for-old-men-2007",
@@ -1039,7 +1098,8 @@
       "Woody Harrelson",
       "Kelly Macdonald",
       "Garret Dillahunt"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "goodfellas-1990",
@@ -1065,6 +1125,9 @@
       "Lorraine Bracco",
       "Paul Sorvino",
       "Frank Sivero"
+    ],
+    "similar": [
+      "the-shawshank-redemption-1994"
     ]
   },
   {
@@ -1091,7 +1154,8 @@
       "Richard Attenborough",
       "Bob Peck",
       "Martin Ferrero"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-lord-of-the-rings-the-fellowship-of-the-ring-2001",
@@ -1117,7 +1181,8 @@
       "Sean Astin",
       "Ian Holm",
       "Liv Tyler"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "back-to-the-future-1985",
@@ -1143,7 +1208,8 @@
       "Lea Thompson",
       "Claudia Wells",
       "Thomas F. Wilson"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "ratatouille-2007",
@@ -1169,7 +1235,8 @@
       "Brian Dennehy",
       "Peter Sohn",
       "Peter O'Toole"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "black-swan-2010",
@@ -1195,7 +1262,8 @@
       "Barbara Hershey",
       "Winona Ryder",
       "Benjamin Millepied"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-truman-show-1998",
@@ -1221,7 +1289,8 @@
       "Noah Emmerich",
       "Natascha McElhone",
       "Holland Taylor"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "superbad-2007",
@@ -1246,7 +1315,8 @@
       "Bill Hader",
       "Seth Rogen",
       "Martha MacIsaac"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "hereditary-2018",
@@ -1272,7 +1342,8 @@
       "Milly Shapiro",
       "Ann Dowd",
       "Mallory Bechtel"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "aftersun-2022",
@@ -1297,7 +1368,8 @@
       "Celia Rowlson-Hall",
       "Sally Messham",
       "Ayşe Parlak"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "challengers-2024",
@@ -1323,7 +1395,8 @@
       "Darnell Appling",
       "Bryan Doo",
       "Shane T Harris"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "wicked-2024",
@@ -1349,7 +1422,8 @@
       "Jonathan Bailey",
       "Ethan Slater",
       "Marissa Bode"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "inside-out-2-2024",
@@ -1375,7 +1449,8 @@
       "Liza Lapira",
       "Tony Hale",
       "Lewis Black"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "gladiator-2000",
@@ -1401,7 +1476,8 @@
       "Oliver Reed",
       "Richard Harris",
       "Derek Jacobi"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "avengers-endgame-2019",
@@ -1428,7 +1504,8 @@
       "Chris Hemsworth",
       "Scarlett Johansson",
       "Jeremy Renner"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "shrek-2001",
@@ -1455,7 +1532,8 @@
       "John Lithgow",
       "Vincent Cassel",
       "Peter Dennis"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "the-silence-of-the-lambs-1991",
@@ -1481,6 +1559,9 @@
       "Ted Levine",
       "Anthony Heald",
       "Brooke Smith"
+    ],
+    "similar": [
+      "goodfellas-1990"
     ]
   },
   {
@@ -1507,7 +1588,8 @@
       "Kaoru Kobayashi",
       "Masahiko Nishimura",
       "Tsunehiko Kamijô"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "portrait-of-a-lady-on-fire-2019",
@@ -1533,7 +1615,8 @@
       "Valeria Golino",
       "Christel Baras",
       "Armande Boulanger"
-    ]
+    ],
+    "similar": []
   },
   {
     "id": "spider-man-into-the-spider-verse-2018",
@@ -1561,6 +1644,7 @@
       "Mahershala Ali",
       "Brian Tyree Henry",
       "Lily Tomlin"
-    ]
+    ],
+    "similar": []
   }
 ]

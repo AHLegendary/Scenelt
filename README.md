@@ -172,14 +172,14 @@ If the tests and build succeed and the application runs locally, you're ready to
 
 The local demo runs on a fixed catalog in `src/data/movies.json` and stores the guest's list in localStorage (see `src/lib/localStore.js`). No TMDb calls happen at runtime.
 
-To fill in real posters, add `TMDB_READ_TOKEN` to your `.env` and run:
+To fill in real posters and movie details (overview, runtime, director, cast, backdrop), add `TMDB_READ_TOKEN` to your `.env` and run:
 
 ```bash
-npm run posters          # only movies without a poster yet
-npm run posters -- --all # refresh every movie
+npm run movie-data          # only fills what's missing
+npm run movie-data -- --all # refresh every movie
 ```
 
-Then commit the updated `movies.json`. Movies without a poster show a placeholder card.
+This makes about two TMDb requests per movie, once. Commit the updated `movies.json` afterwards. Movies without a poster show a placeholder card, and the details panel hides anything a movie doesn't have.
 
 ## Development Workflow
 

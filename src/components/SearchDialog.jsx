@@ -5,7 +5,7 @@ import { useMyList } from '../lib/useMyList.js'
 
 // Search the local movie catalog and pick a movie to rank.
 // Esc or clicking outside closes it.
-export default function SearchDialog({ onClose, onPick }) {
+export default function SearchDialog({ onClose, onPick, onOpen }) {
   const [query, setQuery] = useState('')
   const list = useMyList()
   const input = useRef(null)
@@ -17,7 +17,8 @@ export default function SearchDialog({ onClose, onPick }) {
 
   useEffect(() => {
     input.current?.focus()
-    const onKey = (e) => e.key === 'Escape' && onClose()
+    // Esc closes the top-most panel only; movie details can sit on top of search.
+    const onKey = (e) => e.key === 'Escape' && !document.querySelector('.overlay--top') && onClose()
     window.addEventListener('keydown', onKey)
     // keep the page behind from scrolling while the dialog is open
     const prev = document.body.style.overflow
@@ -76,7 +77,9 @@ export default function SearchDialog({ onClose, onPick }) {
                 <li className="result" key={movie.id}>
                   <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
                   <div className="row__info">
-                    <span className="row__title">{movie.title}</span>
+                    <button type="button" className="row__title row__link" onClick={() => onOpen(movie.id)}>
+                      {movie.title}
+                    </button>
                     <span className="row__meta">
                       {movie.year} · {movie.genres.join(', ')}
                     </span>

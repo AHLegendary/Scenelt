@@ -7,7 +7,7 @@ import { useMyTiers } from '../lib/useMyList.js'
 // The guest's own ranked list. Starts empty; "Rank a movie" opens search.
 // Tied movies share a rank. Scores appear once 10+ movies are ranked.
 // highlightId briefly marks the movie that was just ranked.
-export default function MyListPage({ onAdd, onRerank, highlightId }) {
+export default function MyListPage({ onAdd, onRerank, onOpen, highlightId }) {
   const tiers = useMyTiers()
   const ranks = tierRanks(tiers)
   const count = tiers.reduce((n, tier) => n + tier.length, 0)
@@ -70,24 +70,26 @@ export default function MyListPage({ onAdd, onRerank, highlightId }) {
           {tiers.map((tier, t) =>
             tier.map((movie, k) => {
               const isTied = tier.length > 1
-              const classes = ['row', 'row--mine']
+              const classes = ['row', 'row--mine', 'row--link']
               if (isTied) classes.push('is-tied')
               if (isTied && k === 0) classes.push('is-tie-start')
               if (isTied && k === tier.length - 1) classes.push('is-tie-end')
               if (movie.id === highlightId) classes.push('is-new')
               return (
-                <li className={classes.join(' ')} key={movie.id}>
+                <li className={classes.join(' ')} key={movie.id} onClick={() => onOpen(movie.id)}>
                   <span className="row__rank">{ranks[t]}</span>
                   <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
                   <div className="row__info">
-                    <span className="row__title">{movie.title}</span>
+                    <button type="button" className="row__title row__link" onClick={(e) => { e.stopPropagation(); onOpen(movie.id) }}>
+                      {movie.title}
+                    </button>
                     <span className="row__meta">
                       {movie.year}
                       {isTied && <span className="chip">Tied</span>}
                     </span>
                   </div>
                   <div className="row__end">
-                    <div className="row__actions">
+                    <div className="row__actions" onClick={(e) => e.stopPropagation()}>
                       {count > 1 && (
                         <button type="button" className="row__btn" onClick={() => onRerank(movie)} aria-label={`Rerank ${movie.title}`}>
                           Rerank

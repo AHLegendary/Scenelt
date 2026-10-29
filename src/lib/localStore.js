@@ -18,9 +18,14 @@ export function getMovie(id) {
   return BY_ID.get(id) || null
 }
 
+// Full TMDb image URL for a path like "/abc.jpg", or null.
+export function imageUrl(path, size = 'w342') {
+  return path ? `${POSTER_BASE}${size}${path}` : null
+}
+
 // Full TMDb image URL, or null when the movie has no poster yet.
 export function posterUrl(movie, size = 'w342') {
-  return movie?.poster_path ? `${POSTER_BASE}${size}${movie.poster_path}` : null
+  return imageUrl(movie?.poster_path, size)
 }
 
 // Lowercase and strip accents so "amelie" finds "Amélie".
@@ -63,6 +68,17 @@ export function getLeaderboard(period = 'weekly', category = 'highest') {
   return [...rows]
     .sort((a, b) => b[key] - a[key])
     .map((row, i) => ({ ...getMovie(row.movieId), score: row.score, rankers: row.rankers, rank: i + 1 }))
+}
+
+// How the community ranks a movie this week and this month, from the
+// leaderboard data. Each is { rank, score, rankers } or null if it isn't listed.
+export function getCommunityStats(id) {
+  const stats = {}
+  for (const period of PERIODS) {
+    const row = getLeaderboard(period, 'highest').find((r) => r.id === id)
+    stats[period] = row ? { rank: row.rank, score: row.score, rankers: row.rankers } : null
+  }
+  return stats
 }
 
 // ------------------------------------------------------------------ my list

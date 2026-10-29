@@ -8,7 +8,22 @@
       "Adventure"
     ],
     "poster_path": "/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
-    "tmdb_id": 693134
+    "tmdb_id": 693134,
+    "overview": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+    "tagline": "Long live the fighters.",
+    "runtime": 167,
+    "backdrop_path": "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg",
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "cast": [
+      "Timothée Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson",
+      "Javier Bardem",
+      "Josh Brolin",
+      "Austin Butler"
+    ]
   },
   {
     "id": "past-lives-2023",
@@ -19,7 +34,22 @@
       "Romance"
     ],
     "poster_path": "/k3waqVXSnvCZWfJYNtdamTgTtTA.jpg",
-    "tmdb_id": 666277
+    "tmdb_id": 666277,
+    "overview": "After decades apart, childhood friends Nora and Hae Sung are reunited in New York for one fateful weekend as they confront notions of destiny, love, and the choices that make a life.",
+    "tagline": "A heartrending modern romance that confronts notions of destiny, love, and the choices that make a life.",
+    "runtime": 106,
+    "backdrop_path": "/7HR38hMBl23lf38MAN63y4pKsHz.jpg",
+    "directors": [
+      "Celine Song"
+    ],
+    "cast": [
+      "Greta Lee",
+      "Teo Yoo",
+      "John Magaro",
+      "Moon Seung-ah",
+      "Leem Seung-min",
+      "Yoon Ji-hye"
+    ]
   },
   {
     "id": "spider-man-across-the-spider-verse-2023",
@@ -30,7 +60,24 @@
       "Action"
     ],
     "poster_path": "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
-    "tmdb_id": 569094
+    "tmdb_id": 569094,
+    "overview": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse's very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
+    "tagline": "It's how you wear the mask that matters.",
+    "runtime": 140,
+    "backdrop_path": "/kVd3a9YeLGkoeR50jGEXM6EqseS.jpg",
+    "directors": [
+      "Kemp Powers",
+      "Justin K. Thompson",
+      "Joaquim Dos Santos"
+    ],
+    "cast": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Oscar Isaac",
+      "Brian Tyree Henry",
+      "Luna Lauren Vélez",
+      "Jake Johnson"
+    ]
   },
   {
     "id": "oppenheimer-2023",
@@ -41,7 +88,22 @@
       "History"
     ],
     "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "tmdb_id": 872585
+    "tmdb_id": 872585,
+    "overview": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+    "tagline": "The world forever changes.",
+    "runtime": 181,
+    "backdrop_path": "/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg",
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "cast": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Matt Damon",
+      "Robert Downey Jr.",
+      "Florence Pugh",
+      "Josh Hartnett"
+    ]
   },
   {
     "id": "the-holdovers-2023",
@@ -52,7 +114,22 @@
       "Drama"
     ],
     "poster_path": "/VHSzNBTwxV8vh7wylo7O9CLdac.jpg",
-    "tmdb_id": 840430
+    "tmdb_id": 840430,
+    "overview": "A curmudgeonly instructor at a New England prep school is forced to remain on campus during Christmas break to babysit the handful of students with nowhere to go. Eventually, he forms an unlikely bond with one of them — a damaged, brainy troublemaker — and with the school’s head cook, who has just lost a son in Vietnam.",
+    "tagline": "Discomfort and joy.",
+    "runtime": 133,
+    "backdrop_path": "/57fhbxl9is7W7ur5v6UuvlNsoSg.jpg",
+    "directors": [
+      "Alexander Payne"
+    ],
+    "cast": [
+      "Paul Giamatti",
+      "Dominic Sessa",
+      "Da'Vine Joy Randolph",
+      "Carrie Preston",
+      "Brady Hepner",
+      "Ian Dolley"
+    ]
   },
   {
     "id": "everything-everywhere-all-at-once-2022",
@@ -63,7 +140,23 @@
       "Comedy"
     ],
     "poster_path": "/u68AjlvlutfEIcpmbYpKcdi09ut.jpg",
-    "tmdb_id": 545611
+    "tmdb_id": 545611,
+    "overview": "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes.",
+    "tagline": "The universe is so much bigger than you realize.",
+    "runtime": 140,
+    "backdrop_path": "/fIwiFha3WPu5nHkBeMQ4GzEk0Hv.jpg",
+    "directors": [
+      "Daniel Scheinert",
+      "Daniel Kwan"
+    ],
+    "cast": [
+      "Michelle Yeoh",
+      "Stephanie Hsu",
+      "Ke Huy Quan",
+      "James Hong",
+      "Jamie Lee Curtis",
+      "Tallie Medel"
+    ]
   },
   {
     "id": "parasite-2019",
@@ -74,7 +167,22 @@
       "Drama"
     ],
     "poster_path": "/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
-    "tmdb_id": 496243
+    "tmdb_id": 496243,
+    "overview": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+    "tagline": "Act like you own the place.",
+    "runtime": 133,
+    "backdrop_path": "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+    "directors": [
+      "Bong Joon Ho"
+    ],
+    "cast": [
+      "Song Kang-ho",
+      "Lee Sun-kyun",
+      "Cho Yeo-jeong",
+      "Choi Woo-shik",
+      "Park So-dam",
+      "Lee Jung-eun"
+    ]
   },
   {
     "id": "whiplash-2014",
@@ -85,7 +193,22 @@
       "Music"
     ],
     "poster_path": "/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
-    "tmdb_id": 244786
+    "tmdb_id": 244786,
+    "overview": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+    "tagline": "Do your best, he said…",
+    "runtime": 107,
+    "backdrop_path": "/fRGxZuo7jJUWQsVg9PREb98Aclp.jpg",
+    "directors": [
+      "Damien Chazelle"
+    ],
+    "cast": [
+      "Miles Teller",
+      "J.K. Simmons",
+      "Paul Reiser",
+      "Melissa Benoist",
+      "Austin Stowell",
+      "Nate Lang"
+    ]
   },
   {
     "id": "anatomy-of-a-fall-2023",
@@ -96,7 +219,22 @@
       "Mystery"
     ],
     "poster_path": "/1ho0d4LNZw3Y0voeKmSvPSgJOJ2.jpg",
-    "tmdb_id": 915935
+    "tmdb_id": 915935,
+    "overview": "A woman is suspected of her husband's murder, and their blind son faces a moral dilemma as the sole witness.",
+    "tagline": "Did she do it?",
+    "runtime": 151,
+    "backdrop_path": "/lDVl2jf6VB8ODl1olZ6FLvOV1gX.jpg",
+    "directors": [
+      "Justine Triet"
+    ],
+    "cast": [
+      "Sandra Hüller",
+      "Swann Arlaud",
+      "Milo Machado-Graner",
+      "Antoine Reinartz",
+      "Samuel Theis",
+      "Jehnny Beth"
+    ]
   },
   {
     "id": "poor-things-2023",
@@ -107,7 +245,22 @@
       "Science Fiction"
     ],
     "poster_path": "/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg",
-    "tmdb_id": 792307
+    "tmdb_id": 792307,
+    "overview": "Brought back to life by an unorthodox scientist, a young woman runs off with a lawyer on a whirlwind adventure across the continents. Free from the prejudices of her times, she grows steadfast in her purpose to stand for equality and liberation.",
+    "tagline": "She’s nothing like you’ve ever seen.",
+    "runtime": 141,
+    "backdrop_path": "/zh6IdheEYinU4TPtorWsjx6qPQE.jpg",
+    "directors": [
+      "Yorgos Lanthimos"
+    ],
+    "cast": [
+      "Emma Stone",
+      "Mark Ruffalo",
+      "Willem Dafoe",
+      "Ramy Youssef",
+      "Christopher Abbott",
+      "Suzy Bemba"
+    ]
   },
   {
     "id": "interstellar-2014",
@@ -118,7 +271,22 @@
       "Drama"
     ],
     "poster_path": "/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
-    "tmdb_id": 157336
+    "tmdb_id": 157336,
+    "overview": "The adventures of a group of explorers who make use of a newly discovered wormhole to surpass the limitations on human space travel and conquer the vast distances involved in an interstellar voyage.",
+    "tagline": "Mankind was born on Earth. It was never meant to die here.",
+    "runtime": 169,
+    "backdrop_path": "/8sNiAPPYU14PUepFNeSNGUTiHW.jpg",
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "cast": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Michael Caine",
+      "Jessica Chastain",
+      "Casey Affleck",
+      "Wes Bentley"
+    ]
   },
   {
     "id": "the-dark-knight-2008",
@@ -129,7 +297,22 @@
       "Crime"
     ],
     "poster_path": "/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-    "tmdb_id": 155
+    "tmdb_id": 155,
+    "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+    "tagline": "Welcome to a world without rules.",
+    "runtime": 152,
+    "backdrop_path": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "cast": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine",
+      "Maggie Gyllenhaal",
+      "Gary Oldman"
+    ]
   },
   {
     "id": "get-out-2017",
@@ -140,7 +323,22 @@
       "Thriller"
     ],
     "poster_path": "/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",
-    "tmdb_id": 419430
+    "tmdb_id": 419430,
+    "overview": "Chris and his girlfriend Rose go upstate to visit her parents for the weekend. At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.",
+    "tagline": "Just because you're invited, doesn't mean you're welcome.",
+    "runtime": 104,
+    "backdrop_path": "/bBQHALHRAaaORlPNXv7fNcRXYdx.jpg",
+    "directors": [
+      "Jordan Peele"
+    ],
+    "cast": [
+      "Daniel Kaluuya",
+      "Allison Williams",
+      "Catherine Keener",
+      "Bradley Whitford",
+      "Caleb Landry Jones",
+      "Marcus Henderson"
+    ]
   },
   {
     "id": "la-la-land-2016",
@@ -151,7 +349,22 @@
       "Music"
     ],
     "poster_path": "/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",
-    "tmdb_id": 313369
+    "tmdb_id": 313369,
+    "overview": "Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician, scrapes by playing cocktail party gigs in dingy bars, but as success mounts they are faced with decisions that begin to fray the fragile fabric of their love affair, and the dreams they worked so hard to maintain in each other threaten to rip them apart.",
+    "tagline": "Here's to the fools who dream.",
+    "runtime": 129,
+    "backdrop_path": "/nlPCdZlHtRNcF6C9hzUH4ebmV1w.jpg",
+    "directors": [
+      "Damien Chazelle"
+    ],
+    "cast": [
+      "Ryan Gosling",
+      "Emma Stone",
+      "John Legend",
+      "Rosemarie DeWitt",
+      "Finn Wittrock",
+      "Callie Hernandez"
+    ]
   },
   {
     "id": "inception-2010",
@@ -162,7 +375,22 @@
       "Action"
     ],
     "poster_path": "/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
-    "tmdb_id": 27205
+    "tmdb_id": 27205,
+    "overview": "Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: \"inception\", the implantation of another person's idea into a target's subconscious.",
+    "tagline": "Your mind is the scene of the crime.",
+    "runtime": 148,
+    "backdrop_path": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "cast": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Ken Watanabe",
+      "Tom Hardy",
+      "Elliot Page",
+      "Dileep Rao"
+    ]
   },
   {
     "id": "pulp-fiction-1994",
@@ -173,7 +401,22 @@
       "Thriller"
     ],
     "poster_path": "/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg",
-    "tmdb_id": 680
+    "tmdb_id": 680,
+    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    "tagline": "You won’t know the facts until you’ve seen the fiction.",
+    "runtime": 154,
+    "backdrop_path": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+    "directors": [
+      "Quentin Tarantino"
+    ],
+    "cast": [
+      "John Travolta",
+      "Samuel L. Jackson",
+      "Uma Thurman",
+      "Bruce Willis",
+      "Ving Rhames",
+      "Harvey Keitel"
+    ]
   },
   {
     "id": "the-godfather-1972",
@@ -184,7 +427,22 @@
       "Drama"
     ],
     "poster_path": "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
-    "tmdb_id": 238
+    "tmdb_id": 238,
+    "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+    "tagline": "An offer you can't refuse.",
+    "runtime": 175,
+    "backdrop_path": "/ejdD20cdHNFAYAN2DlqPToXKyzx.jpg",
+    "directors": [
+      "Francis Ford Coppola"
+    ],
+    "cast": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Robert Duvall",
+      "Richard S. Castellano",
+      "Diane Keaton"
+    ]
   },
   {
     "id": "the-shawshank-redemption-1994",
@@ -194,7 +452,22 @@
       "Drama"
     ],
     "poster_path": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
-    "tmdb_id": 278
+    "tmdb_id": 278,
+    "overview": "Imprisoned in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.",
+    "tagline": "Fear can hold you prisoner. Hope can set you free.",
+    "runtime": 142,
+    "backdrop_path": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+    "directors": [
+      "Frank Darabont"
+    ],
+    "cast": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton",
+      "William Sadler",
+      "Clancy Brown",
+      "Gil Bellows"
+    ]
   },
   {
     "id": "fight-club-1999",
@@ -205,7 +478,22 @@
       "Thriller"
     ],
     "poster_path": "/jSziioSwPVrOy9Yow3XhWIBDjq1.jpg",
-    "tmdb_id": 550
+    "tmdb_id": 550,
+    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+    "tagline": "Mischief. Mayhem. Soap.",
+    "runtime": 139,
+    "backdrop_path": "/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
+    "directors": [
+      "David Fincher"
+    ],
+    "cast": [
+      "Edward Norton",
+      "Brad Pitt",
+      "Helena Bonham Carter",
+      "Meat Loaf",
+      "Jared Leto",
+      "Zach Grenier"
+    ]
   },
   {
     "id": "the-matrix-1999",
@@ -216,7 +504,23 @@
       "Action"
     ],
     "poster_path": "/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
-    "tmdb_id": 603
+    "tmdb_id": 603,
+    "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+    "tagline": "Believe the unbelievable.",
+    "runtime": 136,
+    "backdrop_path": "/tlm8UkiQsitc8rSuIAscQDCnP8d.jpg",
+    "directors": [
+      "Lana Wachowski",
+      "Lilly Wachowski"
+    ],
+    "cast": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss",
+      "Hugo Weaving",
+      "Gloria Foster",
+      "Joe Pantoliano"
+    ]
   },
   {
     "id": "spirited-away-2001",
@@ -227,7 +531,22 @@
       "Fantasy"
     ],
     "poster_path": "/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
-    "tmdb_id": 129
+    "tmdb_id": 129,
+    "overview": "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.",
+    "tagline": "Prepare to be spirited away.",
+    "runtime": 125,
+    "backdrop_path": "/m4TUa2ciEWSlk37rOsjiSIvZDXE.jpg",
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "cast": [
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki",
+      "Takashi Naito",
+      "Yasuko Sawaguchi",
+      "Tatsuya Gashuin"
+    ]
   },
   {
     "id": "barbie-2023",
@@ -238,7 +557,22 @@
       "Fantasy"
     ],
     "poster_path": "/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
-    "tmdb_id": 346698
+    "tmdb_id": 346698,
+    "overview": "Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.",
+    "tagline": "She's everything. He's just Ken.",
+    "runtime": 114,
+    "backdrop_path": "/1esAE8sLJRWWFsLLeh5r3g2WanI.jpg",
+    "directors": [
+      "Greta Gerwig"
+    ],
+    "cast": [
+      "Margot Robbie",
+      "Ryan Gosling",
+      "America Ferrera",
+      "Ariana Greenblatt",
+      "Issa Rae",
+      "Kate McKinnon"
+    ]
   },
   {
     "id": "toy-story-1995",
@@ -249,7 +583,22 @@
       "Family"
     ],
     "poster_path": "/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
-    "tmdb_id": 862
+    "tmdb_id": 862,
+    "overview": "Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.",
+    "tagline": "Hang on for the comedy that goes to infinity and beyond!",
+    "runtime": 81,
+    "backdrop_path": "/3Rfvhy1Nl6sSGJwyjb0QiZzZYlB.jpg",
+    "directors": [
+      "John Lasseter"
+    ],
+    "cast": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Don Rickles",
+      "Jim Varney",
+      "Wallace Shawn",
+      "John Ratzenberger"
+    ]
   },
   {
     "id": "titanic-1997",
@@ -260,7 +609,22 @@
       "Drama"
     ],
     "poster_path": "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
-    "tmdb_id": 597
+    "tmdb_id": 597,
+    "overview": "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.",
+    "tagline": "Nothing on earth could come between them.",
+    "runtime": 194,
+    "backdrop_path": "/sCzcYW9h55WcesOqA12cgEr9Exw.jpg",
+    "directors": [
+      "James Cameron"
+    ],
+    "cast": [
+      "Leonardo DiCaprio",
+      "Kate Winslet",
+      "Billy Zane",
+      "Kathy Bates",
+      "Frances Fisher",
+      "Gloria Stuart"
+    ]
   },
   {
     "id": "the-social-network-2010",
@@ -270,7 +634,22 @@
       "Drama"
     ],
     "poster_path": "/n0ybibhJtQ5icDqTp8eRytcIHJx.jpg",
-    "tmdb_id": 37799
+    "tmdb_id": 37799,
+    "overview": "In 2003, Harvard undergrad and computer programmer Mark Zuckerberg begins work on a new concept that eventually turns into the global social network known as Facebook. Six years later, Mark is one of the youngest billionaires ever, but his unprecedented success leads to both personal and legal complications when he ends up on the receiving end of two lawsuits, one involving his former friend.",
+    "tagline": "You don't get to 500 million friends without making a few enemies.",
+    "runtime": 121,
+    "backdrop_path": "/1PXwh3nJzgRkkYnqfWInJNypeL4.jpg",
+    "directors": [
+      "David Fincher"
+    ],
+    "cast": [
+      "Jesse Eisenberg",
+      "Andrew Garfield",
+      "Armie Hammer",
+      "Justin Timberlake",
+      "Rooney Mara",
+      "Max Minghella"
+    ]
   },
   {
     "id": "her-2013",
@@ -281,7 +660,22 @@
       "Science Fiction"
     ],
     "poster_path": "/eCOtqtfvn7mxGl6nfmq4b1exJRc.jpg",
-    "tmdb_id": 152601
+    "tmdb_id": 152601,
+    "overview": "In the not so distant future, Theodore, a lonely writer, purchases a newly developed operating system designed to meet the user's every need. To Theodore's surprise, a romantic relationship develops between him and his operating system. This unconventional love story blends science fiction and romance in a sweet tale that explores the nature of love and the ways that technology isolates and connects us all.",
+    "tagline": "A Spike Jonze love story.",
+    "runtime": 126,
+    "backdrop_path": "/1YnZchmaGc8dchgRPDpR1KGrixA.jpg",
+    "directors": [
+      "Spike Jonze"
+    ],
+    "cast": [
+      "Joaquin Phoenix",
+      "Scarlett Johansson",
+      "Lynn Adrianna",
+      "Lisa Renee Pitts",
+      "Gabe Gomez",
+      "Chris Pratt"
+    ]
   },
   {
     "id": "arrival-2016",
@@ -292,7 +686,22 @@
       "Drama"
     ],
     "poster_path": "/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg",
-    "tmdb_id": 329865
+    "tmdb_id": 329865,
+    "overview": "Taking place after alien crafts land around the world, an expert linguist is recruited by the military to determine whether they come in peace or are a threat.",
+    "tagline": "Why are they here?",
+    "runtime": 116,
+    "backdrop_path": "/8MUZz7oPXQftFTslZpRP3CVMOoq.jpg",
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "cast": [
+      "Amy Adams",
+      "Jeremy Renner",
+      "Forest Whitaker",
+      "Michael Stuhlbarg",
+      "Mark O'Brien",
+      "Tzi Ma"
+    ]
   },
   {
     "id": "mad-max-fury-road-2015",
@@ -303,7 +712,22 @@
       "Adventure"
     ],
     "poster_path": "/ulcAi4dKpAjHwYGS08vNyx9H6I9.jpg",
-    "tmdb_id": 76341
+    "tmdb_id": 76341,
+    "overview": "An apocalyptic story set in the furthest reaches of our planet, in a stark desert landscape where humanity is broken, and most everyone is crazed fighting for the necessities of life. Within this world exist two rebels on the run who just might be able to restore order.",
+    "tagline": "The future belongs to the mad.",
+    "runtime": 121,
+    "backdrop_path": "/gqrnQA6Xppdl8vIb2eJc58VC1tW.jpg",
+    "directors": [
+      "George Miller"
+    ],
+    "cast": [
+      "Tom Hardy",
+      "Charlize Theron",
+      "Nicholas Hoult",
+      "Hugh Keays-Byrne",
+      "Josh Helman",
+      "Nathan Jones"
+    ]
   },
   {
     "id": "knives-out-2019",
@@ -314,7 +738,22 @@
       "Comedy"
     ],
     "poster_path": "/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
-    "tmdb_id": 546554
+    "tmdb_id": 546554,
+    "overview": "When renowned crime novelist Harlan Thrombey is found dead at his estate just after his 85th birthday, the inquisitive and debonair Detective Benoit Blanc is mysteriously enlisted to investigate. From Harlan's dysfunctional family to his devoted staff, Blanc sifts through a web of red herrings and self-serving lies to uncover the truth behind Harlan's untimely death.",
+    "tagline": "Hell, any of them could have done it.",
+    "runtime": 131,
+    "backdrop_path": "/4HWAQu28e2yaWrtupFPGFkdNU7V.jpg",
+    "directors": [
+      "Rian Johnson"
+    ],
+    "cast": [
+      "Daniel Craig",
+      "Chris Evans",
+      "Ana de Armas",
+      "Jamie Lee Curtis",
+      "Michael Shannon",
+      "Don Johnson"
+    ]
   },
   {
     "id": "lady-bird-2017",
@@ -325,7 +764,22 @@
       "Drama"
     ],
     "poster_path": "/gl66K7zRdtNYGrxyS2YDUP5ASZd.jpg",
-    "tmdb_id": 391713
+    "tmdb_id": 391713,
+    "overview": "Lady Bird McPherson, a strong willed, deeply opinionated, artistic 17 year old comes of age in Sacramento. Her relationship with her mother and her upbringing are questioned and tested as she plans to head off to college.",
+    "tagline": "Fly away home.",
+    "runtime": 94,
+    "backdrop_path": "/jwBiY1kE5089i2WpfS1MHDYp3VO.jpg",
+    "directors": [
+      "Greta Gerwig"
+    ],
+    "cast": [
+      "Saoirse Ronan",
+      "Laurie Metcalf",
+      "Tracy Letts",
+      "Lucas Hedges",
+      "Timothée Chalamet",
+      "Beanie Feldstein"
+    ]
   },
   {
     "id": "moonlight-2016",
@@ -335,7 +789,22 @@
       "Drama"
     ],
     "poster_path": "/qLnfEmPrDjJfPyyddLJPkXmshkp.jpg",
-    "tmdb_id": 376867
+    "tmdb_id": 376867,
+    "overview": "The tender, heartbreaking story of a young man’s struggle to find himself, told across three defining chapters in his life as he experiences the ecstasy, pain, and beauty of falling in love, while grappling with his own sexuality.",
+    "tagline": "This is the story of a lifetime",
+    "runtime": 112,
+    "backdrop_path": "/jm1oD3eB08LImSwL1LrzF9AJQ5b.jpg",
+    "directors": [
+      "Barry Jenkins"
+    ],
+    "cast": [
+      "Trevante Rhodes",
+      "André Holland",
+      "Janelle Monáe",
+      "Ashton Sanders",
+      "Jharrel Jerome",
+      "Alex R. Hibbert"
+    ]
   },
   {
     "id": "inside-out-2015",
@@ -346,7 +815,22 @@
       "Family"
     ],
     "poster_path": "/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg",
-    "tmdb_id": 150540
+    "tmdb_id": 150540,
+    "overview": "When 11-year-old Riley moves to a new city, her Emotions team up to help her through the transition. Joy, Fear, Anger, Disgust and Sadness work together, but when Joy and Sadness get lost, they must journey through unfamiliar places to get back home.",
+    "tagline": "Meet the little voices inside your head.",
+    "runtime": 95,
+    "backdrop_path": "/jJKZaTBNenlFclQyjrnvzkRmvWE.jpg",
+    "directors": [
+      "Pete Docter"
+    ],
+    "cast": [
+      "Amy Poehler",
+      "Phyllis Smith",
+      "Richard Kind",
+      "Bill Hader",
+      "Lewis Black",
+      "Mindy Kaling"
+    ]
   },
   {
     "id": "up-2009",
@@ -357,7 +841,22 @@
       "Adventure"
     ],
     "poster_path": "/mFvoEwSfLqbcWwFsDjQebn9bzFe.jpg",
-    "tmdb_id": 14160
+    "tmdb_id": 14160,
+    "overview": "Carl Fredricksen spent his entire life dreaming of exploring the globe and experiencing life to its fullest. But at age 78, life seems to have passed him by, until a twist of fate (and a persistent 8-year old Wilderness Explorer named Russell) gives him a new lease on life.",
+    "tagline": "Change is in the air.",
+    "runtime": 96,
+    "backdrop_path": "/hGGC9gKo7CFE3fW07RA587e5kol.jpg",
+    "directors": [
+      "Pete Docter"
+    ],
+    "cast": [
+      "Ed Asner",
+      "Christopher Plummer",
+      "Jordan Nagai",
+      "Bob Peterson",
+      "Delroy Lindo",
+      "Jerome Ranft"
+    ]
   },
   {
     "id": "coco-2017",
@@ -368,7 +867,22 @@
       "Family"
     ],
     "poster_path": "/6Ryitt95xrO8KXuqRGm1fUuNwqF.jpg",
-    "tmdb_id": 354912
+    "tmdb_id": 354912,
+    "overview": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+    "tagline": "The celebration of a lifetime.",
+    "runtime": 105,
+    "backdrop_path": "/g7CHF8gTLGooTbP4GznIGwaqAGL.jpg",
+    "directors": [
+      "Lee Unkrich"
+    ],
+    "cast": [
+      "Anthony Gonzalez",
+      "Gael García Bernal",
+      "Benjamin Bratt",
+      "Alanna Ubach",
+      "Renée Victor",
+      "Jaime Camil"
+    ]
   },
   {
     "id": "the-grand-budapest-hotel-2014",
@@ -379,7 +893,22 @@
       "Drama"
     ],
     "poster_path": "/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
-    "tmdb_id": 120467
+    "tmdb_id": 120467,
+    "overview": "The Grand Budapest Hotel tells of a legendary concierge at a famous European hotel between the wars and his friendship with a young employee who becomes his trusted protégé. The story involves the theft and recovery of a priceless Renaissance painting, the battle for an enormous family fortune and the slow and then sudden upheavals that transformed Europe during the first half of the 20th century.",
+    "tagline": "A murder case of Madam D. with enormous wealth and the most outrageous events surrounding her sudden death!",
+    "runtime": 100,
+    "backdrop_path": "/jK65srQczOKTpW62wPxwwKztGgE.jpg",
+    "directors": [
+      "Wes Anderson"
+    ],
+    "cast": [
+      "Ralph Fiennes",
+      "F. Murray Abraham",
+      "Tony Revolori",
+      "Adrien Brody",
+      "Willem Dafoe",
+      "Mathieu Amalric"
+    ]
   },
   {
     "id": "blade-runner-2049-2017",
@@ -390,7 +919,22 @@
       "Drama"
     ],
     "poster_path": "/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
-    "tmdb_id": 335984
+    "tmdb_id": 335984,
+    "overview": "Thirty years after the events of the first film, a new blade runner, LAPD Officer K, unearths a long-buried secret that has the potential to plunge what's left of society into chaos. K's discovery leads him on a quest to find Rick Deckard, a former LAPD blade runner who has been missing for 30 years.",
+    "tagline": "The key to the future is finally unearthed.",
+    "runtime": 164,
+    "backdrop_path": "/gNdLJU9TxrpGx4dkZidjys3fyy0.jpg",
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "cast": [
+      "Ryan Gosling",
+      "Harrison Ford",
+      "Ana de Armas",
+      "Dave Bautista",
+      "Robin Wright",
+      "Sylvia Hoeks"
+    ]
   },
   {
     "id": "top-gun-maverick-2022",
@@ -401,7 +945,22 @@
       "Drama"
     ],
     "poster_path": "/n0YuM4f5lvGAP6MAW2kBIzugXnc.jpg",
-    "tmdb_id": 361743
+    "tmdb_id": 361743,
+    "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "tagline": "Feel the need... The need for speed.",
+    "runtime": 131,
+    "backdrop_path": "/AaV1YIdWKnjAIAOe8UUKBFm327v.jpg",
+    "directors": [
+      "Joseph Kosinski"
+    ],
+    "cast": [
+      "Tom Cruise",
+      "Miles Teller",
+      "Jennifer Connelly",
+      "Bashir Salahuddin",
+      "Jon Hamm",
+      "Charles Parnell"
+    ]
   },
   {
     "id": "little-women-2019",
@@ -412,7 +971,22 @@
       "Romance"
     ],
     "poster_path": "/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg",
-    "tmdb_id": 331482
+    "tmdb_id": 331482,
+    "overview": "Four sisters come of age in America in the aftermath of the Civil War.",
+    "tagline": "Own your story.",
+    "runtime": 135,
+    "backdrop_path": "/lqxxwTRk0l7CubY6JkJdhnwJEkn.jpg",
+    "directors": [
+      "Greta Gerwig"
+    ],
+    "cast": [
+      "Saoirse Ronan",
+      "Emma Watson",
+      "Florence Pugh",
+      "Eliza Scanlen",
+      "Laura Dern",
+      "Timothée Chalamet"
+    ]
   },
   {
     "id": "amelie-2001",
@@ -423,7 +997,22 @@
       "Romance"
     ],
     "poster_path": "/nSxDa3M9aMvGVLoItzWTepQ5h5d.jpg",
-    "tmdb_id": 194
+    "tmdb_id": 194,
+    "overview": "At a tiny Parisian café, the adorable yet painfully shy Amélie accidentally discovers a gift for helping others. Soon Amelie is spending her days as a matchmaker, guardian angel, and all-around do-gooder. But when she bumps into a handsome stranger, will she find the courage to become the star of her very own love story?",
+    "tagline": "She’ll change your life.",
+    "runtime": 122,
+    "backdrop_path": "/6n53UI4mX9QMfe2S0Pgt8mGebY1.jpg",
+    "directors": [
+      "Jean-Pierre Jeunet"
+    ],
+    "cast": [
+      "Audrey Tautou",
+      "Mathieu Kassovitz",
+      "Rufus",
+      "Serge Merlin",
+      "Jamel Debbouze",
+      "Clotilde Mollet"
+    ]
   },
   {
     "id": "no-country-for-old-men-2007",
@@ -434,7 +1023,23 @@
       "Thriller"
     ],
     "poster_path": "/6d5XOczc226jECq0LIX0siKtgHR.jpg",
-    "tmdb_id": 6977
+    "tmdb_id": 6977,
+    "overview": "Llewelyn Moss stumbles upon dead bodies, $2 million and a hoard of heroin in a Texas desert, but methodical killer Anton Chigurh comes looking for it, with local sheriff Ed Tom Bell hot on his trail. The roles of prey and predator blur as the violent pursuit of money and justice collide.",
+    "tagline": "There are no clean getaways.",
+    "runtime": 122,
+    "backdrop_path": "/gddUsvfyySrM5k8B8wwJy2VRlBx.jpg",
+    "directors": [
+      "Joel Coen",
+      "Ethan Coen"
+    ],
+    "cast": [
+      "Javier Bardem",
+      "Tommy Lee Jones",
+      "Josh Brolin",
+      "Woody Harrelson",
+      "Kelly Macdonald",
+      "Garret Dillahunt"
+    ]
   },
   {
     "id": "goodfellas-1990",
@@ -445,7 +1050,22 @@
       "Drama"
     ],
     "poster_path": "/9OkCLM73MIU2CrKZbqiT8Ln1wY2.jpg",
-    "tmdb_id": 769
+    "tmdb_id": 769,
+    "overview": "The true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who is adopted by neighbourhood gangsters at an early age and climbs the ranks of a Mafia family under the guidance of Jimmy Conway.",
+    "tagline": "Three decades of life in the mafia.",
+    "runtime": 145,
+    "backdrop_path": "/gILte6Zd7m1YneIr6MVhh30S9pr.jpg",
+    "directors": [
+      "Martin Scorsese"
+    ],
+    "cast": [
+      "Robert De Niro",
+      "Ray Liotta",
+      "Joe Pesci",
+      "Lorraine Bracco",
+      "Paul Sorvino",
+      "Frank Sivero"
+    ]
   },
   {
     "id": "jurassic-park-1993",
@@ -456,7 +1076,22 @@
       "Science Fiction"
     ],
     "poster_path": "/d9mtMGQDLANKieb9PbD3yK7xxzo.jpg",
-    "tmdb_id": 329
+    "tmdb_id": 329,
+    "overview": "A wealthy entrepreneur secretly creates a theme park featuring living dinosaurs drawn from prehistoric DNA. Before opening day, he invites a team of experts and his two eager grandchildren to experience the park and help calm anxious investors. However, the park is anything but amusing as the security systems go off-line and the dinosaurs escape.",
+    "tagline": "An adventure 65 million years in the making.",
+    "runtime": 127,
+    "backdrop_path": "/4SyDTF02R5BepqSdQmOaNCHObzF.jpg",
+    "directors": [
+      "Steven Spielberg"
+    ],
+    "cast": [
+      "Sam Neill",
+      "Laura Dern",
+      "Jeff Goldblum",
+      "Richard Attenborough",
+      "Bob Peck",
+      "Martin Ferrero"
+    ]
   },
   {
     "id": "the-lord-of-the-rings-the-fellowship-of-the-ring-2001",
@@ -467,7 +1102,22 @@
       "Adventure"
     ],
     "poster_path": "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
-    "tmdb_id": 120
+    "tmdb_id": 120,
+    "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+    "tagline": "One ring to rule them all.",
+    "runtime": 179,
+    "backdrop_path": "/oiwc338EoBgS4sEI2ixAny4KQKg.jpg",
+    "directors": [
+      "Peter Jackson"
+    ],
+    "cast": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen",
+      "Sean Astin",
+      "Ian Holm",
+      "Liv Tyler"
+    ]
   },
   {
     "id": "back-to-the-future-1985",
@@ -478,7 +1128,22 @@
       "Comedy"
     ],
     "poster_path": "/vN5B5WgYscRGcQpVhHl6p9DDTP0.jpg",
-    "tmdb_id": 105
+    "tmdb_id": 105,
+    "overview": "Eighties teenager Marty McFly is accidentally sent back in time to 1955, inadvertently disrupting his parents' first meeting and attracting his mother's romantic interest. Marty must repair the damage to history by rekindling his parents' romance and - with the help of his eccentric inventor friend Doc Brown - return to 1985.",
+    "tagline": "He was never in time for his classes... He wasn't in time for his dinner... Then one day... he wasn't in his time at all.",
+    "runtime": 116,
+    "backdrop_path": "/5bzPWQ2dFUl2aZKkp7ILJVVkRed.jpg",
+    "directors": [
+      "Robert Zemeckis"
+    ],
+    "cast": [
+      "Michael J. Fox",
+      "Christopher Lloyd",
+      "Crispin Glover",
+      "Lea Thompson",
+      "Claudia Wells",
+      "Thomas F. Wilson"
+    ]
   },
   {
     "id": "ratatouille-2007",
@@ -489,7 +1154,22 @@
       "Comedy"
     ],
     "poster_path": "/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg",
-    "tmdb_id": 2062
+    "tmdb_id": 2062,
+    "overview": "In one of Paris's finest restaurants, Remy, a determined young rat, dreams of becoming a renowned French chef. Torn between his family's wishes and his true calling, Remy and his pal Linguini set in motion a hilarious chain of events that turns the City of Lights upside down.",
+    "tagline": "He's dying to become a chef.",
+    "runtime": 111,
+    "backdrop_path": "/zeoaHdXRDd5IoUiMVsNhwTZm78B.jpg",
+    "directors": [
+      "Brad Bird"
+    ],
+    "cast": [
+      "Patton Oswalt",
+      "Lou Romano",
+      "Ian Holm",
+      "Brian Dennehy",
+      "Peter Sohn",
+      "Peter O'Toole"
+    ]
   },
   {
     "id": "black-swan-2010",
@@ -500,7 +1180,22 @@
       "Drama"
     ],
     "poster_path": "/viWheBd44bouiLCHgNMvahLThqx.jpg",
-    "tmdb_id": 44214
+    "tmdb_id": 44214,
+    "overview": "A committed dancer struggles to maintain her sanity after winning the lead role in a production of Tchaikovsky's \"Swan Lake.\"",
+    "tagline": "Perfection is not what it seems.",
+    "runtime": 108,
+    "backdrop_path": "/eDLp4uFdqP1gpy9oMrutwH6Q64I.jpg",
+    "directors": [
+      "Darren Aronofsky"
+    ],
+    "cast": [
+      "Natalie Portman",
+      "Mila Kunis",
+      "Vincent Cassel",
+      "Barbara Hershey",
+      "Winona Ryder",
+      "Benjamin Millepied"
+    ]
   },
   {
     "id": "the-truman-show-1998",
@@ -511,7 +1206,22 @@
       "Drama"
     ],
     "poster_path": "/vuza0WqY239yBXOadKlGwJsZJFE.jpg",
-    "tmdb_id": 37165
+    "tmdb_id": 37165,
+    "overview": "In a picture-perfect seaside town, an insurance salesman begins to realize that his entire existence may be staged and observed by a vast unseen audience as part of a long-running real-time reality TV show.",
+    "tagline": "On the air. Unaware.",
+    "runtime": 103,
+    "backdrop_path": "/rmiG2uwcNoGFmBKMoa1pIcf514L.jpg",
+    "directors": [
+      "Peter Weir"
+    ],
+    "cast": [
+      "Jim Carrey",
+      "Ed Harris",
+      "Laura Linney",
+      "Noah Emmerich",
+      "Natascha McElhone",
+      "Holland Taylor"
+    ]
   },
   {
     "id": "superbad-2007",
@@ -521,7 +1231,22 @@
       "Comedy"
     ],
     "poster_path": "/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg",
-    "tmdb_id": 8363
+    "tmdb_id": 8363,
+    "overview": "Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.",
+    "tagline": "Come and get some!",
+    "runtime": 113,
+    "backdrop_path": "/coru98UcFBzJIU7bxZguxaePgu0.jpg",
+    "directors": [
+      "Greg Mottola"
+    ],
+    "cast": [
+      "Jonah Hill",
+      "Michael Cera",
+      "Christopher Mintz-Plasse",
+      "Bill Hader",
+      "Seth Rogen",
+      "Martha MacIsaac"
+    ]
   },
   {
     "id": "hereditary-2018",
@@ -532,7 +1257,22 @@
       "Mystery"
     ],
     "poster_path": "/4GFPuL14eXi66V96xBWY73Y9PfR.jpg",
-    "tmdb_id": 493922
+    "tmdb_id": 493922,
+    "overview": "When the matriarch of the Graham family passes away, her daughter begins to unravel cryptic and increasingly terrifying secrets about her ancestry.",
+    "tagline": "Every family tree hides a secret.",
+    "runtime": 128,
+    "backdrop_path": "/pS9Aub8MPyQbENblGD8mHeaqMuv.jpg",
+    "directors": [
+      "Ari Aster"
+    ],
+    "cast": [
+      "Toni Collette",
+      "Alex Wolff",
+      "Gabriel Byrne",
+      "Milly Shapiro",
+      "Ann Dowd",
+      "Mallory Bechtel"
+    ]
   },
   {
     "id": "aftersun-2022",
@@ -542,7 +1282,22 @@
       "Drama"
     ],
     "poster_path": "/evKz85EKouVbIr51zy5fOtpNRPg.jpg",
-    "tmdb_id": 965150
+    "tmdb_id": 965150,
+    "overview": "Sophie reflects on the shared joy and private melancholy of a holiday she took with her father twenty years earlier. Memories fill the gaps between camcorder footages as she tries to reconcile the father she knew with the troubled man she didn't.",
+    "tagline": "Memory burns.",
+    "runtime": 101,
+    "backdrop_path": "/4jdduww9j5RyzO4ITRcuBFhqNN1.jpg",
+    "directors": [
+      "Charlotte Wells"
+    ],
+    "cast": [
+      "Paul Mescal",
+      "Frankie Corio",
+      "Brooklyn Toulson",
+      "Celia Rowlson-Hall",
+      "Sally Messham",
+      "Ayşe Parlak"
+    ]
   },
   {
     "id": "challengers-2024",
@@ -553,7 +1308,22 @@
       "Romance"
     ],
     "poster_path": "/H6vke7zGiuLsz4v4RPeReb9rsv.jpg",
-    "tmdb_id": 937287
+    "tmdb_id": 937287,
+    "overview": "Tennis player turned coach Tashi has taken her husband, Art, and transformed him into a world-famous Major champion. To jolt him out of his recent losing streak, she signs him up for a \"Challenger\" event — close to the lowest level of pro tournament — where he finds himself standing across the net from his former best friend and Tashi's former boyfriend.",
+    "tagline": "Her game. Her rules.",
+    "runtime": 132,
+    "backdrop_path": "/4CcUgdiGe83MeqJW1NyJVmZqRrF.jpg",
+    "directors": [
+      "Luca Guadagnino"
+    ],
+    "cast": [
+      "Zendaya",
+      "Mike Faist",
+      "Josh O'Connor",
+      "Darnell Appling",
+      "Bryan Doo",
+      "Shane T Harris"
+    ]
   },
   {
     "id": "wicked-2024",
@@ -564,7 +1334,22 @@
       "Music"
     ],
     "poster_path": "/xDGbZ0JJ3mYaGKy4Nzd9Kph6M9L.jpg",
-    "tmdb_id": 402431
+    "tmdb_id": 402431,
+    "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+    "tagline": "Everyone deserves the chance to fly.",
+    "runtime": 162,
+    "backdrop_path": "/w22GVYotTIVC1dUd58mRhwPqiS.jpg",
+    "directors": [
+      "Jon M. Chu"
+    ],
+    "cast": [
+      "Cynthia Erivo",
+      "Ariana Grande",
+      "Michelle Yeoh",
+      "Jonathan Bailey",
+      "Ethan Slater",
+      "Marissa Bode"
+    ]
   },
   {
     "id": "inside-out-2-2024",
@@ -575,7 +1360,22 @@
       "Family"
     ],
     "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
-    "tmdb_id": 1022789
+    "tmdb_id": 1022789,
+    "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
+    "tagline": "Make room for new emotions.",
+    "runtime": 97,
+    "backdrop_path": "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
+    "directors": [
+      "Kelsey Mann"
+    ],
+    "cast": [
+      "Amy Poehler",
+      "Maya Hawke",
+      "Kensington Tallman",
+      "Liza Lapira",
+      "Tony Hale",
+      "Lewis Black"
+    ]
   },
   {
     "id": "gladiator-2000",
@@ -586,7 +1386,22 @@
       "Drama"
     ],
     "poster_path": "/aDb548BOkFfI4nFm0kx8A3Ezh7H.jpg",
-    "tmdb_id": 98
+    "tmdb_id": 98,
+    "overview": "After the death of Emperor Marcus Aurelius, his devious son takes power and demotes Maximus, one of Rome's most capable generals who Marcus preferred. Eventually, Maximus is forced to become a gladiator and battle to the death against other men for the amusement of paying audiences.",
+    "tagline": "What we do in life echoes in eternity.",
+    "runtime": 155,
+    "backdrop_path": "/Ar7QuJ7sJEiC0oP3I8fKBKIQD9u.jpg",
+    "directors": [
+      "Ridley Scott"
+    ],
+    "cast": [
+      "Russell Crowe",
+      "Joaquin Phoenix",
+      "Connie Nielsen",
+      "Oliver Reed",
+      "Richard Harris",
+      "Derek Jacobi"
+    ]
   },
   {
     "id": "avengers-endgame-2019",
@@ -597,7 +1412,23 @@
       "Science Fiction"
     ],
     "poster_path": "/bR8ISy1O9XQxqiy0fQFw2BX72RQ.jpg",
-    "tmdb_id": 299534
+    "tmdb_id": 299534,
+    "overview": "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
+    "tagline": "Avenge the fallen.",
+    "runtime": 181,
+    "backdrop_path": "/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg",
+    "directors": [
+      "Anthony Russo",
+      "Joe Russo"
+    ],
+    "cast": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth",
+      "Scarlett Johansson",
+      "Jeremy Renner"
+    ]
   },
   {
     "id": "shrek-2001",
@@ -608,7 +1439,23 @@
       "Comedy"
     ],
     "poster_path": "/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg",
-    "tmdb_id": 808
+    "tmdb_id": 808,
+    "overview": "It ain't easy bein' green -- especially if you're a likable (albeit smelly) ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches of a fire-breathing dragon, Shrek teams up with an unlikely compatriot -- a wisecracking donkey.",
+    "tagline": "The greatest fairy tale never told.",
+    "runtime": 90,
+    "backdrop_path": "/w0eKUOEog2ImtktCHAMUZws8qif.jpg",
+    "directors": [
+      "Andrew Adamson",
+      "Vicky Jenson"
+    ],
+    "cast": [
+      "Mike Myers",
+      "Eddie Murphy",
+      "Cameron Diaz",
+      "John Lithgow",
+      "Vincent Cassel",
+      "Peter Dennis"
+    ]
   },
   {
     "id": "the-silence-of-the-lambs-1991",
@@ -619,7 +1466,22 @@
       "Crime"
     ],
     "poster_path": "/uS9m8OBk1A8eM9I042bx8XXpqAq.jpg",
-    "tmdb_id": 274
+    "tmdb_id": 274,
+    "overview": "Clarice Starling is a top student at the FBI's training academy.  Jack Crawford wants Clarice to interview Dr. Hannibal Lecter, a brilliant psychiatrist who is also a violent psychopath, serving life behind bars for various acts of murder and cannibalism.  Crawford believes that Lecter may have insight into a case and that Starling, as an attractive young woman, may be just the bait to draw him out.",
+    "tagline": "To enter the mind of a killer she must challenge the mind of a madman.",
+    "runtime": 119,
+    "backdrop_path": "/mbOx1wxMLikzwWUO9TKAcFIy6op.jpg",
+    "directors": [
+      "Jonathan Demme"
+    ],
+    "cast": [
+      "Jodie Foster",
+      "Anthony Hopkins",
+      "Scott Glenn",
+      "Ted Levine",
+      "Anthony Heald",
+      "Brooke Smith"
+    ]
   },
   {
     "id": "princess-mononoke-1997",
@@ -630,7 +1492,22 @@
       "Fantasy"
     ],
     "poster_path": "/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
-    "tmdb_id": 128
+    "tmdb_id": 128,
+    "overview": "Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.",
+    "tagline": "The fate of the world rests on the courage of one warrior.",
+    "runtime": 134,
+    "backdrop_path": "/gl0jzn4BupSbL2qMVeqrjKkF9Js.jpg",
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "cast": [
+      "Yoji Matsuda",
+      "Yuriko Ishida",
+      "Yuko Tanaka",
+      "Kaoru Kobayashi",
+      "Masahiko Nishimura",
+      "Tsunehiko Kamijô"
+    ]
   },
   {
     "id": "portrait-of-a-lady-on-fire-2019",
@@ -641,7 +1518,22 @@
       "Romance"
     ],
     "poster_path": "/2LquGwEhbg3soxSCs9VNyh5VJd9.jpg",
-    "tmdb_id": 531428
+    "tmdb_id": 531428,
+    "overview": "On an isolated island in Brittany at the end of the eighteenth century, a female painter is obliged to paint a wedding portrait of a young woman.",
+    "tagline": "Don't regret. Remember.",
+    "runtime": 121,
+    "backdrop_path": "/ivJ5UzT6IzucLVfbZwCCwiJJoBz.jpg",
+    "directors": [
+      "Céline Sciamma"
+    ],
+    "cast": [
+      "Noémie Merlant",
+      "Adèle Haenel",
+      "Luàna Bajrami",
+      "Valeria Golino",
+      "Christel Baras",
+      "Armande Boulanger"
+    ]
   },
   {
     "id": "spider-man-into-the-spider-verse-2018",
@@ -652,6 +1544,23 @@
       "Action"
     ],
     "poster_path": "/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg",
-    "tmdb_id": 324857
+    "tmdb_id": 324857,
+    "overview": "Struggling to find his place in the world while juggling school and family, Brooklyn teenager Miles Morales is unexpectedly bitten by a radioactive spider and develops unfathomable powers just like the one and only Spider-Man. While wrestling with the implications of his new abilities, Miles discovers a super collider created by the madman Wilson \"Kingpin\" Fisk, causing others from across the Spider-Verse to be inadvertently transported to his dimension.",
+    "tagline": "Enter a universe where more than one wears the mask.",
+    "runtime": 117,
+    "backdrop_path": "/1ntePsIqeklfmrQJqZPncCydsqY.jpg",
+    "directors": [
+      "Bob Persichetti",
+      "Peter Ramsey",
+      "Rodney Rothman"
+    ],
+    "cast": [
+      "Shameik Moore",
+      "Jake Johnson",
+      "Hailee Steinfeld",
+      "Mahershala Ali",
+      "Brian Tyree Henry",
+      "Lily Tomlin"
+    ]
   }
 ]

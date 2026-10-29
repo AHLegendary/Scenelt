@@ -1,29 +1,71 @@
+/* Global tokens and base styles.
+   Soft neutral look: warm grey page, off-white surfaces, near-black pills. */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
+  --bg: #eceae6;          /* page */
+  --surface: #f7f6f4;     /* boards, cards */
+  --paper: #ffffff;       /* raised controls */
+  --ink: #1d1c1a;         /* text + primary actions */
+  --ink-2: #55524c;       /* secondary text */
+  --ink-3: #6e6a63;       /* hints, placeholders */
+  --muted: #8b867d;       /* inactive tab labels (large text only) */
+  --line: #dedad3;
+  --line-2: #b8b3aa;      /* dashed outlines */
+  --hover: #e4e1db;
+  --accent: #1d1c1a;
+  --accent-ink: #ffffff;
+  --gold: #b8892c;
+  --shadow-rgb: 29 28 26;
 
-  font: 17px/1.5 system-ui, 'Segoe UI', Roboto, sans-serif;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+  --shadow-sm: 0 2px 8px rgb(var(--shadow-rgb) / 0.06);
+  --shadow-md: 0 8px 24px rgb(var(--shadow-rgb) / 0.12);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --fast: 160ms;
+  --mid: 280ms;
+
+  --font: "Albert Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-  }
-}
+* { box-sizing: border-box; }
+
+html, body, #root { min-height: 100%; }
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, p { margin: 0; }
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }

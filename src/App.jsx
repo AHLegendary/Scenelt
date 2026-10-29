@@ -1,46 +1,44 @@
+import { useEffect, useState } from 'react'
 import './App.css'
+import Sidebar from './components/Sidebar.jsx'
+import { PAGES } from './lib/pages.js'
+import LeaderboardPage from './pages/LeaderboardPage.jsx'
+import MyListPage from './pages/MyListPage.jsx'
 
-const features = [
-  {
-    title: 'Head-to-head rankings',
-    text: 'Pick between two movies at a time and build a ranking that actually reflects your taste.',
-  },
-  {
-    title: 'Movie Blend',
-    text: 'Find something everyone in your group will want to watch.',
-  },
-  {
-    title: 'Reviews and friends',
-    text: "Write reviews, follow friends, and see what they're ranking.",
-  },
-]
+const DEFAULT_PAGE = 'leaderboard'
+
+// Pages live in the URL hash (#/my-list) so refresh and back/forward work
+// without a router or any server config on Vercel.
+function pageFromHash() {
+  const id = window.location.hash.replace(/^#\/?/, '')
+  return PAGES.some((p) => p.id === id) ? id : DEFAULT_PAGE
+}
 
 function App() {
+  const [page, setPage] = useState(pageFromHash)
+
+  useEffect(() => {
+    const onHash = () => setPage(pageFromHash())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+
+  function navigate(id) {
+    window.location.hash = `/${id}`
+  }
+
   return (
-    <div className="page">
-      <header className="nav">
-        <span className="logo">SceneIt</span>
-      </header>
-
-      <main className="hero">
-        <p className="badge">Coming soon</p>
-        <h1>Rank movies by what you actually like.</h1>
-        <p className="tagline">
-          No more star ratings. SceneIt builds your personal movie ranking
-          through quick head-to-head comparisons.
-        </p>
+    <div className="app">
+      <Sidebar current={page} onNavigate={navigate} />
+      <main className="main">
+        <div className="topbar">
+          <span className="guest" title="You're browsing as a guest. Your list is saved in this browser.">
+            <span className="guest__dot" aria-hidden="true" />
+            Guest
+          </span>
+        </div>
+        {page === 'my-list' ? <MyListPage /> : <LeaderboardPage />}
       </main>
-
-      <section className="features">
-        {features.map((f) => (
-          <div className="card" key={f.title}>
-            <h2>{f.title}</h2>
-            <p>{f.text}</p>
-          </div>
-        ))}
-      </section>
-
-      <footer className="footer">SceneIt · CSE 403 project</footer>
     </div>
   )
 }

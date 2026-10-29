@@ -1,32 +1,50 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import Poster from '../../components/Poster.jsx'
-import { getMyList, insertMovie, posterUrl } from '../../lib/localStore.js'
+import { getMyTiers, placeMovie, posterUrl } from '../../lib/localStore.js'
 import {
   answer,
-  finalPosition,
+  applyPlacement,
+  finalPlacement,
   isDone,
   maxComparisons,
+  NEW,
   nextOpponent,
+  OPPONENT,
   startInsertion,
+  TIE,
+  tierRanks,
 } from './binaryInsertion.js'
+import { moviesUntilScores, scoreTiers } from './scores.js'
 
-// Full-screen head-to-head flow for placing one movie into My List.
-// The list is only saved once the last comparison is answered, so closing
-// early leaves the existing ranking untouched.
-export default function CompareView({ movie, onClose, onRankAnother, onSeeList }) {
-  // Snapshot the list once; the ranking is computed against this version.
-  const [history, setHistory] = useState(() => [startInsertion(getMyList(), movie)])
+// Rank of a movie in a list of tiers, or null if it isn't there.
+function rankOf(tiers, id) {
+  const ranks = tierRanks(tiers)
+  const at = tiers.findIndex((tier) => tier.some((m) => m.id === id))
+  return at === -1 ? null : ranks[at]
+}
+
+// Full-screen head-to-head flow for placing one movie in My List: a newly
+// watched movie, or one being reranked. The list is only saved once the last
+// comparison is answered, so closing early leaves the ranking untouched.
+export default function CompareView({ movie, rerank = false, onClose, onRankAnother, onSeeList }) {
+  // Snapshot the list once. When reranking, the movie is compared against
+  // everything except itself.
+  const [setup] = useState(() => {
+    const current = getMyTiers()
+    const others = current.map((tier) => tier.filter((m) => m.id !== movie.id)).filter((tier) => tier.length)
+    return { oldRank: rerank ? rankOf(current, movie.id) : null, start: startInsertion(others, movie) }
+  })
+  const [history, setHistory] = useState([setup.start])
   const saved = useRef(false)
   const titleId = useId()
 
   const state = history[history.length - 1]
   const done = isDone(state)
   const opponent = nextOpponent(state)
-  const total = state.list.length
 
-  function choose(prefersNew) {
+  function choose(choice) {
     if (done) return
-    setHistory((h) => [...h, answer(h[h.length - 1], prefersNew)])
+    setHistory((h) => [...h, answer(h[h.length - 1], choice)])
   }
 
   function undo() {
@@ -37,15 +55,17 @@ export default function CompareView({ movie, onClose, onRankAnother, onSeeList }
   useEffect(() => {
     if (done && !saved.current) {
       saved.current = true
-      insertMovie(movie.id, finalPosition(state))
+      placeMovie(movie.id, finalPlacement(state))
     }
   }, [done, movie.id, state])
 
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose()
-      else if (!done && e.key === 'ArrowLeft') choose(true)
-      else if (!done && e.key === 'ArrowRight') choose(false)
+      else if (done) return
+      else if (e.key === 'ArrowLeft') choose(NEW)
+      else if (e.key === 'ArrowRight') choose(OPPONENT)
+      else if (e.key === 'ArrowDown' || e.key === '=') choose(TIE)
     }
     window.addEventListener('keydown', onKey)
     const prev = document.body.style.overflow
@@ -59,7 +79,7 @@ export default function CompareView({ movie, onClose, onRankAnother, onSeeList }
   return (
     <div className="overlay overlay--solid">
       <div className="compare" role="dialog" aria-modal="true" aria-labelledby={titleId}>
-        <button type="button" className="dialog__close compare__close" onClick={onClose} aria-label="Close without ranking">
+        <button type="button" className="dialog__close compare__close" onClick={onClose} aria-label="Close without saving">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
             <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
           </svg>
@@ -69,8 +89,9 @@ export default function CompareView({ movie, onClose, onRankAnother, onSeeList }
           <Placed
             titleId={titleId}
             movie={movie}
-            position={finalPosition(state)}
-            list={state.list}
+            tiers={applyPlacement(state.tiers, movie, finalPlacement(state))}
+            tied={finalPlacement(state).tied}
+            oldRank={setup.oldRank}
             onRankAnother={onRankAnother}
             onSeeList={onSeeList}
           />
@@ -79,19 +100,23 @@ export default function CompareView({ movie, onClose, onRankAnother, onSeeList }
             <header className="compare__head">
               <h2 className="compare__title" id={titleId}>Which did you like more?</h2>
               <p className="compare__progress" aria-live="polite">
-                Comparison {state.comparisons + 1} of up to {maxComparisons(total)}
+                Comparison {state.comparisons + 1} of up to {maxComparisons(state.tiers.length)}
               </p>
             </header>
 
             <div className="duel">
-              <PickCard movie={movie} badge="Just watched" onPick={() => choose(true)} hint="←" />
+              <PickCard movie={movie} badge={rerank ? 'Reranking' : 'Just watched'} onPick={() => choose(NEW)} hint="←" />
               <span className="duel__vs" aria-hidden="true">vs</span>
-              <PickCard key={opponent.id} movie={opponent} onPick={() => choose(false)} hint="→" />
+              <PickCard key={opponent.id} movie={opponent} onPick={() => choose(OPPONENT)} hint="→" />
             </div>
 
             <footer className="compare__foot">
               <button type="button" className="ghost" onClick={undo} disabled={history.length === 1}>
                 Undo
+              </button>
+              <button type="button" className="ghost ghost--tie" onClick={() => choose(TIE)}>
+                It's a tie
+                <kbd className="pick__key" aria-hidden="true">↓</kbd>
               </button>
               <span className="compare__keys">Tap a poster, or use ← →</span>
             </footer>
@@ -116,39 +141,71 @@ function PickCard({ movie, badge, onPick, hint }) {
   )
 }
 
-// Result screen: where the movie landed, with its neighbors for context.
-function Placed({ titleId, movie, position, list, onRankAnother, onSeeList }) {
-  const ranked = [...list.slice(0, position), movie, ...list.slice(position)]
-  const from = Math.max(0, Math.min(position - 1, ranked.length - 3))
-  const nearby = ranked.slice(from, from + 3)
-  const first = list.length === 0
+// Result screen: where the movie landed, its score once unlocked, and the
+// movies around it for context.
+function Placed({ titleId, movie, tiers, tied, oldRank, onRankAnother, onSeeList }) {
+  const ranks = tierRanks(tiers)
+  const rows = tiers.flatMap((tier, i) => tier.map((m) => ({ movie: m, rank: ranks[i], tier: i })))
+  const at = rows.findIndex((r) => r.movie.id === movie.id)
+  const from = Math.max(0, Math.min(at - 1, rows.length - 3))
+  const nearby = rows.slice(from, from + 3)
+  const { rank, tier } = rows[at]
+  const count = rows.length
+  const tiedWith = tiers[tier].filter((m) => m.id !== movie.id)
+  const scores = scoreTiers(tiers)
+  const toUnlock = moviesUntilScores(count)
+
+  let eyebrow = 'Ranked'
+  let text = `${movie.title} is now #${rank} in your list.`
+  if (count === 1) {
+    eyebrow = 'First movie added'
+    text = `${movie.title} starts your list. Add another and SceneIt will ask you to compare them.`
+  } else if (tied) {
+    eyebrow = 'Tied'
+    text = `${movie.title} shares #${rank} with ${tiedWith.map((m) => m.title).join(', ')}.`
+  } else if (oldRank !== null) {
+    eyebrow = 'Reranked'
+    text = oldRank === rank ? `${movie.title} stays at #${rank}.` : `${movie.title} moved from #${oldRank} to #${rank}.`
+  }
 
   return (
     <div className="placed">
-      <p className="placed__eyebrow">{first ? 'First movie added' : 'Ranked'}</p>
+      <p className="placed__eyebrow">{eyebrow}</p>
       <h2 className="placed__rank" id={titleId}>
-        #{position + 1}
-        <span> of {ranked.length}</span>
+        #{rank}
+        <span> of {count}</span>
       </h2>
-      <p className="placed__text">
-        {first
-          ? `${movie.title} starts your list. Add another and SceneIt will ask you to compare them.`
-          : `${movie.title} is now #${position + 1} in your list.`}
-      </p>
+      <p className="placed__text">{text}</p>
+      {scores ? (
+        <p className="placed__score">
+          Score <strong>{scores.get(movie.id).toFixed(1)}</strong>
+        </p>
+      ) : (
+        <p className="placed__unlock">
+          Rank {toUnlock} more {toUnlock === 1 ? 'movie' : 'movies'} to unlock scores
+        </p>
+      )}
 
       <ol className="placed__list">
-        {nearby.map((m) => (
-          <li key={m.id} className={m.id === movie.id ? 'is-new' : undefined}>
-            <span className="placed__num">{ranked.indexOf(m) + 1}</span>
-            <Poster title={m.title} src={posterUrl(m, 'w154')} size="sm" />
-            <span className="placed__name">{m.title}</span>
+        {nearby.map((r) => (
+          <li key={r.movie.id} className={r.movie.id === movie.id ? 'is-new' : undefined}>
+            <span className="placed__num">{r.rank}</span>
+            <Poster title={r.movie.title} src={posterUrl(r.movie, 'w154')} size="sm" />
+            <span className="placed__name">{r.movie.title}</span>
+            {scores && <span className="placed__val">{scores.get(r.movie.id).toFixed(1)}</span>}
           </li>
         ))}
       </ol>
 
       <div className="placed__actions">
-        <button type="button" className="btn btn--light" onClick={onSeeList}>See my list</button>
-        <button type="button" className="btn" onClick={onRankAnother} autoFocus>Rank another</button>
+        {onRankAnother ? (
+          <>
+            <button type="button" className="btn btn--light" onClick={onSeeList}>See my list</button>
+            <button type="button" className="btn" onClick={onRankAnother} autoFocus>Rank another</button>
+          </>
+        ) : (
+          <button type="button" className="btn" onClick={onSeeList} autoFocus>Done</button>
+        )}
       </div>
     </div>
   )

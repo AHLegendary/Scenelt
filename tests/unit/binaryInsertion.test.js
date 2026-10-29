@@ -1,12 +1,18 @@
 import { describe, it, expect } from 'vitest'
 import {
   answer,
+  applyPlacement,
+  finalPlacement,
   finalPosition,
   insertWith,
   isDone,
   maxComparisons,
   nextOpponent,
   startInsertion,
+  NEW,
+  OPPONENT,
+  TIE,
+  tierRanks,
 } from '../../src/features/ranking/binaryInsertion.js'
 
 // A list of n movies ranked best first; `taste` is the user's hidden score.
@@ -38,7 +44,10 @@ describe('maxComparisons', () => {
 describe('binary insertion', () => {
   it('places the first movie with no comparisons', () => {
     const result = insertWith([], { id: 'new', taste: 1 }, byTaste)
-    expect(result).toEqual({ position: 0, comparisons: 0, list: [{ id: 'new', taste: 1 }] })
+    expect(result.position).toBe(0)
+    expect(result.tied).toBe(false)
+    expect(result.comparisons).toBe(0)
+    expect(result.list).toEqual([{ id: 'new', taste: 1 }])
   })
 
   for (const n of SIZES) {
@@ -122,5 +131,67 @@ describe('binary insertion', () => {
     const state = startInsertion(rankedList(2), { id: 'new' })
     expect(() => finalPosition(state)).toThrow()
     expect(() => answer(startInsertion([], { id: 'new' }), true)).toThrow()
+  })
+})
+
+// The user likes movies with equal taste scores the same.
+const withTies = (a, b) => (a.taste === b.taste ? TIE : a.taste < b.taste ? NEW : OPPONENT)
+
+describe('ties', () => {
+  for (const n of SIZES.filter((size) => size > 0)) {
+    it(`joins the matching tier within the bound (n = ${n})`, () => {
+      const list = rankedList(n)
+      for (let target = 0; target < n; target += 1) {
+        const item = { id: 'new', taste: target * 2 }
+        const result = insertWith(list, item, withTies)
+        expect(result.tied).toBe(true)
+        expect(result.position).toBe(target)
+        expect(result.tiers[target].map((m) => m.id)).toEqual([`m${target}`, 'new'])
+        expect(result.tiers).toHaveLength(n)
+        expect(result.comparisons).toBeLessThanOrEqual(maxComparisons(n))
+      }
+    })
+  }
+
+  it('counts each tier once, so tied lists need fewer comparisons', () => {
+    // 100 movies in 10 tiers of 10: at most ceil(log2(11)) = 4 comparisons.
+    const tiers = Array.from({ length: 10 }, (_, t) =>
+      Array.from({ length: 10 }, (_, k) => ({ id: `t${t}-${k}`, taste: t * 2 })),
+    )
+    for (let slot = 0; slot <= 10; slot += 1) {
+      const result = insertWith(tiers, { id: 'new', taste: slot * 2 - 1 }, withTies)
+      expect(result.position).toBe(slot)
+      expect(result.comparisons).toBeLessThanOrEqual(maxComparisons(10))
+    }
+  })
+
+  it('compares against the first movie of a tied tier', () => {
+    const tiers = [[{ id: 'a' }, { id: 'b' }]]
+    expect(nextOpponent(startInsertion(tiers, { id: 'new' })).id).toBe('a')
+  })
+
+  it('reports a tie placement and stops asking', () => {
+    let state = startInsertion(rankedList(7), { id: 'new' })
+    state = answer(state, TIE)
+    expect(isDone(state)).toBe(true)
+    expect(nextOpponent(state)).toBeNull()
+    expect(finalPlacement(state)).toEqual({ index: 3, tied: true })
+  })
+
+  it('rejects unknown answers', () => {
+    expect(() => answer(startInsertion(rankedList(2), { id: 'new' }), 'maybe')).toThrow()
+  })
+
+  it('applies placements without changing the input', () => {
+    const tiers = [[{ id: 'a' }], [{ id: 'b' }]]
+    const item = { id: 'x' }
+    expect(applyPlacement(tiers, item, { index: 1, tied: true }).map((t) => t.map((m) => m.id))).toEqual([['a'], ['b', 'x']])
+    expect(applyPlacement(tiers, item, { index: 1, tied: false }).map((t) => t.map((m) => m.id))).toEqual([['a'], ['x'], ['b']])
+    expect(tiers.map((t) => t.length)).toEqual([1, 1])
+  })
+
+  it('ranks tied movies together and skips ahead after them', () => {
+    expect(tierRanks([[1], [2, 3], [4], [5, 6, 7], [8]])).toEqual([1, 2, 4, 5, 8])
+    expect(tierRanks([])).toEqual([])
   })
 })

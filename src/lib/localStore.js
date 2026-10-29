@@ -66,7 +66,8 @@ export function getLeaderboard(period = 'weekly', category = 'highest') {
 }
 
 // ------------------------------------------------------------------ my list
-// Stored as an ordered array of movie ids, best first.
+// Stored as tiers of movie ids, best first: [["a"], ["b", "c"], ["d"]].
+// Tied movies share a tier. The older flat format (["a", "b"]) still loads.
 
 const listeners = new Set()
 
@@ -81,22 +82,40 @@ export function subscribe(listener) {
   }
 }
 
-function readIds(storage) {
+function readTiers(storage) {
+  let raw
   try {
-    const ids = JSON.parse(storage?.getItem(LIST_KEY) || '[]')
-    return Array.isArray(ids) ? ids.filter((id) => BY_ID.has(id)) : []
+    raw = JSON.parse(storage?.getItem(LIST_KEY) || '[]')
   } catch {
     return []
   }
+  if (!Array.isArray(raw)) return []
+  const seen = new Set()
+  const tiers = []
+  for (const entry of raw) {
+    const ids = []
+    for (const id of Array.isArray(entry) ? entry : [entry]) {
+      if (typeof id !== 'string' || !BY_ID.has(id) || seen.has(id)) continue
+      seen.add(id)
+      ids.push(id)
+    }
+    if (ids.length) tiers.push(ids)
+  }
+  return tiers
 }
 
-function writeIds(ids, storage) {
+function writeTiers(tiers, storage) {
   try {
-    storage?.setItem(LIST_KEY, JSON.stringify(ids))
+    storage?.setItem(LIST_KEY, JSON.stringify(tiers.filter((tier) => tier.length)))
   } catch {
     // Storage full or blocked: the change just won't persist across reloads.
   }
   listeners.forEach((fn) => fn())
+}
+
+// Tiers with one movie taken out (empty tiers dropped).
+function without(tiers, id) {
+  return tiers.map((tier) => tier.filter((x) => x !== id)).filter((tier) => tier.length)
 }
 
 // Raw stored value, used as a cheap change marker for React.
@@ -108,24 +127,40 @@ export function getListKey(storage = globalThis.localStorage) {
   }
 }
 
-// The guest's ranked list as movie objects, best first.
+// The guest's ranked list as tiers of movie objects, best first.
+export function getMyTiers(storage = globalThis.localStorage) {
+  return readTiers(storage).map((tier) => tier.map(getMovie))
+}
+
+// The guest's ranked list as one flat list of movies, best first.
 export function getMyList(storage = globalThis.localStorage) {
-  return readIds(storage).map(getMovie)
+  return getMyTiers(storage).flat()
 }
 
 export function isInList(id, storage = globalThis.localStorage) {
-  return readIds(storage).includes(id)
+  return readTiers(storage).some((tier) => tier.includes(id))
 }
 
-// Puts a movie at a given spot in the list (0 = best), e.g. where head-to-head
-// placement landed it. Adding a movie that's already there does nothing.
+// Puts a movie where head-to-head placement landed it, moving it if it was
+// already ranked (that's how reranking saves).
+// tied = false: as its own tier at `index` (0 = best).
+// tied = true: into the existing tier at `index`.
+export function placeMovie(id, { index, tied = false }, storage = globalThis.localStorage) {
+  if (!BY_ID.has(id)) throw new Error(`Unknown movie: ${id}`)
+  const tiers = without(readTiers(storage), id)
+  const at = Math.max(0, Math.min(index, tiers.length))
+  if (tied && at < tiers.length) tiers[at] = [...tiers[at], id]
+  else tiers.splice(at, 0, [id])
+  writeTiers(tiers, storage)
+  return getMyList(storage)
+}
+
+// Inserts a new movie as its own tier at `index`. A movie that's already
+// ranked stays where it is.
 export function insertMovie(id, index, storage = globalThis.localStorage) {
   if (!BY_ID.has(id)) throw new Error(`Unknown movie: ${id}`)
-  const ids = readIds(storage)
-  if (ids.includes(id)) return getMyList(storage)
-  const at = Math.max(0, Math.min(index, ids.length))
-  writeIds([...ids.slice(0, at), id, ...ids.slice(at)], storage)
-  return getMyList(storage)
+  if (isInList(id, storage)) return getMyList(storage)
+  return placeMovie(id, { index }, storage)
 }
 
 // Adds a movie at the bottom of the list.
@@ -134,6 +169,6 @@ export function addMovie(id, storage = globalThis.localStorage) {
 }
 
 export function removeMovie(id, storage = globalThis.localStorage) {
-  writeIds(readIds(storage).filter((x) => x !== id), storage)
+  writeTiers(without(readTiers(storage), id), storage)
   return getMyList(storage)
 }

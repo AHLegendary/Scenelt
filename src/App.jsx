@@ -21,17 +21,22 @@ function App() {
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearch = useCallback(() => setSearchOpen(true), [])
   const closeSearch = useCallback(() => setSearchOpen(false), [])
-  const [ranking, setRanking] = useState(null) // movie being placed head-to-head
+  // Movie being placed head-to-head: { movie, rerank }
+  const [ranking, setRanking] = useState(null)
   const [justRanked, setJustRanked] = useState(null)
 
   // Picking a movie in search starts the head-to-head flow for it.
   function startRanking(movie) {
     setSearchOpen(false)
-    setRanking(movie)
+    setRanking({ movie, rerank: false })
+  }
+
+  function startRerank(movie) {
+    setRanking({ movie, rerank: true })
   }
 
   function finishRanking({ next }) {
-    setJustRanked(ranking.id)
+    setJustRanked(ranking.movie.id)
     setRanking(null)
     if (next === 'search') setSearchOpen(true)
     else navigate('my-list')
@@ -57,7 +62,7 @@ function App() {
             Guest
           </span>
         </div>
-        {page === 'my-list' ? <MyListPage onAdd={openSearch} highlightId={justRanked} /> : <LeaderboardPage />}
+        {page === 'my-list' ? <MyListPage onAdd={openSearch} onRerank={startRerank} highlightId={justRanked} /> : <LeaderboardPage />}
         <footer className="credit">
           Movie data from <a href="https://www.themoviedb.org" target="_blank" rel="noreferrer">TMDB</a>.
           This product uses the TMDB API but is not endorsed or certified by TMDB.
@@ -66,10 +71,11 @@ function App() {
       {searchOpen && <SearchDialog onClose={closeSearch} onPick={startRanking} />}
       {ranking && (
         <CompareView
-          key={ranking.id}
-          movie={ranking}
+          key={`${ranking.movie.id}-${ranking.rerank}`}
+          movie={ranking.movie}
+          rerank={ranking.rerank}
           onClose={() => setRanking(null)}
-          onRankAnother={() => finishRanking({ next: 'search' })}
+          onRankAnother={ranking.rerank ? undefined : () => finishRanking({ next: 'search' })}
           onSeeList={() => finishRanking({ next: 'list' })}
         />
       )}

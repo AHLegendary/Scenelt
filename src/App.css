@@ -334,20 +334,87 @@
 .logo__mark { display: block; border-radius: 8px; }
 
 /* ------------------------------------------------------------------ list extras */
-.row__remove {
+.row__end {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.row__actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--fast);
+}
+.row:hover .row__actions,
+.row__actions:focus-within { opacity: 1; }
+@media (hover: none) { .row__actions { opacity: 1; } }
+.row__btn {
   height: 32px;
-  padding: 0 14px;
+  padding: 0 12px;
   border-radius: var(--r-pill);
   font-size: 13px;
   font-weight: 600;
   color: var(--ink-3);
-  opacity: 0;
-  transition: opacity var(--fast), background var(--fast), color var(--fast);
+  transition: background var(--fast), color var(--fast);
 }
-.row:hover .row__remove,
-.row__remove:focus-visible { opacity: 1; }
-.row__remove:hover { background: var(--hover); color: var(--ink); }
-@media (hover: none) { .row__remove { opacity: 1; } }
+.row__btn:hover { background: var(--hover); color: var(--ink); }
+
+/* tied movies: one rank, joined by a bracket on the left */
+.row.is-tied { position: relative; }
+.row.is-tied::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--line-2);
+}
+.row.is-tie-start::before { top: 18px; border-radius: 3px 3px 0 0; }
+.row.is-tie-end::before { bottom: 18px; border-radius: 0 0 3px 3px; }
+.row.is-tied + .row.is-tied { margin-top: 0; }
+.row.is-tied:not(.is-tie-start) .row__rank { color: transparent; }
+.chip {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: var(--r-pill);
+  background: var(--hover);
+  color: var(--ink-2);
+  font-size: 11px;
+  font-weight: 700;
+  vertical-align: 1px;
+}
+
+/* scores unlock progress */
+.unlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 16px 20px;
+  border-radius: var(--r-md);
+  background: var(--paper);
+  box-shadow: 0 0 0 1px var(--line);
+}
+.unlock__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.unlock__text strong { font-size: 15px; }
+.unlock__text span { font-size: 13px; color: var(--ink-3); }
+.unlock__bar {
+  flex: 0 0 180px;
+  height: 8px;
+  border-radius: var(--r-pill);
+  background: var(--hover);
+  overflow: hidden;
+}
+.unlock__bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width var(--mid) var(--ease);
+}
 
 .credit {
   margin-top: 12px;
@@ -621,10 +688,10 @@
 }
 .placed__list li {
   display: grid;
-  grid-template-columns: 28px auto minmax(0, 1fr);
+  grid-template-columns: 28px auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
-  padding: 6px 8px;
+  padding: 6px 12px 6px 8px;
   border-radius: var(--r-sm);
 }
 .placed__list li.is-new { background: var(--paper); box-shadow: var(--shadow-sm); }
@@ -655,4 +722,35 @@
   .pick__key, .compare__keys { display: none; }
   .compare__foot { justify-content: center; }
   .placed__rank { font-size: 60px; }
+}
+
+.placed__val { font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.placed__score { font-size: 15px; color: var(--ink-2); }
+.placed__score strong { margin-left: 4px; font-size: 22px; font-weight: 800; color: var(--ink); }
+.placed__unlock { font-size: 13px; color: var(--ink-3); }
+.ghost--tie { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+.ghost--tie .pick__key { background: var(--surface); }
+
+@media (max-width: 760px) {
+  .unlock__bar { flex-basis: 100%; }
+  .row__end { gap: 8px; }
+  .row__btn { padding: 0 8px; font-size: 12px; }
+  .compare__foot { gap: 8px; }
+}
+
+/* My List rows on phones: actions sit under the title instead of squeezing it */
+@media (max-width: 760px) {
+  .row--mine {
+    grid-template-columns: 30px auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "rank poster info stat"
+      "rank poster actions stat";
+    row-gap: 0;
+  }
+  .row--mine .row__rank { grid-area: rank; }
+  .row--mine .poster { grid-area: poster; }
+  .row--mine .row__info { grid-area: info; align-self: end; }
+  .row--mine .row__end { display: contents; }
+  .row--mine .row__actions { grid-area: actions; align-self: start; margin-left: -8px; opacity: 1; }
+  .row--mine .row__stat { grid-area: stat; }
 }

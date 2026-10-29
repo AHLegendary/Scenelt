@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Poster from '../components/Poster.jsx'
 import Segmented from '../components/Segmented.jsx'
-import { getLeaderboard } from '../lib/localStore.js'
+import { getLeaderboard, posterUrl } from '../lib/localStore.js'
 
 const PERIOD_OPTIONS = [
   { id: 'weekly', label: 'This week' },
@@ -34,7 +34,7 @@ export default function LeaderboardPage() {
         {rows.map((movie) => (
           <li className={`row${movie.rank <= 3 ? ' is-top' : ''}`} key={movie.id}>
             <span className="row__rank">{movie.rank}</span>
-            <Poster title={movie.title} size="sm" />
+            <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
             <div className="row__info">
               <span className="row__title">{movie.title}</span>
               <span className="row__meta">{movie.year}</span>

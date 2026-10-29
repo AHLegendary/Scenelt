@@ -1,0 +1,597 @@
+[
+  {
+    "id": "dune-part-two-2024",
+    "title": "Dune: Part Two",
+    "year": 2024,
+    "genres": [
+      "Science Fiction",
+      "Adventure"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "past-lives-2023",
+    "title": "Past Lives",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "spider-man-across-the-spider-verse-2023",
+    "title": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "oppenheimer-2023",
+    "title": "Oppenheimer",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-holdovers-2023",
+    "title": "The Holdovers",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "everything-everywhere-all-at-once-2022",
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "parasite-2019",
+    "title": "Parasite",
+    "year": 2019,
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "whiplash-2014",
+    "title": "Whiplash",
+    "year": 2014,
+    "genres": [
+      "Drama",
+      "Music"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "anatomy-of-a-fall-2023",
+    "title": "Anatomy of a Fall",
+    "year": 2023,
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "poor-things-2023",
+    "title": "Poor Things",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Science Fiction"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "interstellar-2014",
+    "title": "Interstellar",
+    "year": 2014,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-dark-knight-2008",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "get-out-2017",
+    "title": "Get Out",
+    "year": 2017,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "la-la-land-2016",
+    "title": "La La Land",
+    "year": 2016,
+    "genres": [
+      "Romance",
+      "Music"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "inception-2010",
+    "title": "Inception",
+    "year": 2010,
+    "genres": [
+      "Science Fiction",
+      "Action"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "pulp-fiction-1994",
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-godfather-1972",
+    "title": "The Godfather",
+    "year": 1972,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-shawshank-redemption-1994",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "fight-club-1999",
+    "title": "Fight Club",
+    "year": 1999,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-matrix-1999",
+    "title": "The Matrix",
+    "year": 1999,
+    "genres": [
+      "Science Fiction",
+      "Action"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "spirited-away-2001",
+    "title": "Spirited Away",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Fantasy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "barbie-2023",
+    "title": "Barbie",
+    "year": 2023,
+    "genres": [
+      "Comedy",
+      "Fantasy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "toy-story-1995",
+    "title": "Toy Story",
+    "year": 1995,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "titanic-1997",
+    "title": "Titanic",
+    "year": 1997,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-social-network-2010",
+    "title": "The Social Network",
+    "year": 2010,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "her-2013",
+    "title": "Her",
+    "year": 2013,
+    "genres": [
+      "Romance",
+      "Science Fiction"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "arrival-2016",
+    "title": "Arrival",
+    "year": 2016,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "mad-max-fury-road-2015",
+    "title": "Mad Max: Fury Road",
+    "year": 2015,
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "knives-out-2019",
+    "title": "Knives Out",
+    "year": 2019,
+    "genres": [
+      "Mystery",
+      "Comedy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "lady-bird-2017",
+    "title": "Lady Bird",
+    "year": 2017,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "moonlight-2016",
+    "title": "Moonlight",
+    "year": 2016,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "inside-out-2015",
+    "title": "Inside Out",
+    "year": 2015,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "up-2009",
+    "title": "Up",
+    "year": 2009,
+    "genres": [
+      "Animation",
+      "Adventure"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "coco-2017",
+    "title": "Coco",
+    "year": 2017,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-grand-budapest-hotel-2014",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "blade-runner-2049-2017",
+    "title": "Blade Runner 2049",
+    "year": 2017,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "top-gun-maverick-2022",
+    "title": "Top Gun: Maverick",
+    "year": 2022,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "little-women-2019",
+    "title": "Little Women",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "amelie-2001",
+    "title": "Amélie",
+    "year": 2001,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "no-country-for-old-men-2007",
+    "title": "No Country for Old Men",
+    "year": 2007,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "goodfellas-1990",
+    "title": "Goodfellas",
+    "year": 1990,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "jurassic-park-1993",
+    "title": "Jurassic Park",
+    "year": 1993,
+    "genres": [
+      "Adventure",
+      "Science Fiction"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-lord-of-the-rings-the-fellowship-of-the-ring-2001",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "back-to-the-future-1985",
+    "title": "Back to the Future",
+    "year": 1985,
+    "genres": [
+      "Science Fiction",
+      "Comedy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "ratatouille-2007",
+    "title": "Ratatouille",
+    "year": 2007,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "black-swan-2010",
+    "title": "Black Swan",
+    "year": 2010,
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-truman-show-1998",
+    "title": "The Truman Show",
+    "year": 1998,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "superbad-2007",
+    "title": "Superbad",
+    "year": 2007,
+    "genres": [
+      "Comedy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "hereditary-2018",
+    "title": "Hereditary",
+    "year": 2018,
+    "genres": [
+      "Horror",
+      "Mystery"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "aftersun-2022",
+    "title": "Aftersun",
+    "year": 2022,
+    "genres": [
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "challengers-2024",
+    "title": "Challengers",
+    "year": 2024,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "wicked-2024",
+    "title": "Wicked",
+    "year": 2024,
+    "genres": [
+      "Fantasy",
+      "Music"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "inside-out-2-2024",
+    "title": "Inside Out 2",
+    "year": 2024,
+    "genres": [
+      "Animation",
+      "Family"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "gladiator-2000",
+    "title": "Gladiator",
+    "year": 2000,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "avengers-endgame-2019",
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "genres": [
+      "Action",
+      "Science Fiction"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "shrek-2001",
+    "title": "Shrek",
+    "year": 2001,
+    "genres": [
+      "Animation",
+      "Comedy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "the-silence-of-the-lambs-1991",
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "genres": [
+      "Thriller",
+      "Crime"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "princess-mononoke-1997",
+    "title": "Princess Mononoke",
+    "year": 1997,
+    "genres": [
+      "Animation",
+      "Fantasy"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "portrait-of-a-lady-on-fire-2019",
+    "title": "Portrait of a Lady on Fire",
+    "year": 2019,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "poster_path": null
+  },
+  {
+    "id": "spider-man-into-the-spider-verse-2018",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "genres": [
+      "Animation",
+      "Action"
+    ],
+    "poster_path": null
+  }
+]

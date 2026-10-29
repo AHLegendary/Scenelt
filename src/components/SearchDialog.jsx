@@ -1,11 +1,11 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import Poster from './Poster.jsx'
-import { addMovie, getSuggestions, posterUrl, searchMovies } from '../lib/localStore.js'
+import { getSuggestions, posterUrl, searchMovies } from '../lib/localStore.js'
 import { useMyList } from '../lib/useMyList.js'
 
-// Search the local movie catalog and add movies to My List.
+// Search the local movie catalog and pick a movie to rank.
 // Esc or clicking outside closes it.
-export default function SearchDialog({ onClose }) {
+export default function SearchDialog({ onClose, onPick }) {
   const [query, setQuery] = useState('')
   const list = useMyList()
   const input = useRef(null)
@@ -32,7 +32,7 @@ export default function SearchDialog({ onClose }) {
     <div className="overlay" onPointerDown={(e) => e.target === e.currentTarget && onClose()}>
       <div className="dialog" role="dialog" aria-modal="true" aria-labelledby={titleId}>
         <div className="dialog__head">
-          <h2 className="dialog__title" id={titleId}>Add a movie</h2>
+          <h2 className="dialog__title" id={titleId}>Rank a movie</h2>
           <button type="button" className="dialog__close" onClick={onClose} aria-label="Close">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
               <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
@@ -85,10 +85,10 @@ export default function SearchDialog({ onClose }) {
                     type="button"
                     className={`btn btn--sm${added ? ' is-done' : ''}`}
                     disabled={added}
-                    onClick={() => addMovie(movie.id)}
-                    aria-label={added ? `${movie.title} is in your list` : `Add ${movie.title}`}
+                    onClick={() => onPick(movie)}
+                    aria-label={added ? `${movie.title} is already ranked` : `Rank ${movie.title}`}
                   >
-                    {added ? 'Added' : 'Add'}
+                    {added ? 'Ranked' : 'Rank'}
                   </button>
                 </li>
               )

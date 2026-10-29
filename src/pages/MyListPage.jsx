@@ -2,8 +2,9 @@ import Poster from '../components/Poster.jsx'
 import { posterUrl, removeMovie } from '../lib/localStore.js'
 import { useMyList } from '../lib/useMyList.js'
 
-// The guest's own ranked list. Starts empty; "Add a movie" opens search.
-export default function MyListPage({ onAdd }) {
+// The guest's own ranked list. Starts empty; "Rank a movie" opens search.
+// highlightId briefly marks the movie that was just ranked.
+export default function MyListPage({ onAdd, highlightId }) {
   const list = useMyList()
 
   return (
@@ -19,7 +20,7 @@ export default function MyListPage({ onAdd }) {
         </div>
         {list.length > 0 && (
           <button type="button" className="btn" onClick={onAdd}>
-            Add a movie
+            Rank a movie
           </button>
         )}
       </header>
@@ -35,13 +36,13 @@ export default function MyListPage({ onAdd }) {
             SceneIt asks you to compare each new movie head-to-head.
           </p>
           <button type="button" className="btn" onClick={onAdd}>
-            Add a movie
+            Rank a movie
           </button>
         </div>
       ) : (
         <ol className="board">
           {list.map((movie, i) => (
-            <li className="row" key={movie.id}>
+            <li className={`row${movie.id === highlightId ? ' is-new' : ''}`} key={movie.id}>
               <span className="row__rank">{i + 1}</span>
               <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
               <div className="row__info">

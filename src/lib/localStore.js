@@ -117,14 +117,20 @@ export function isInList(id, storage = globalThis.localStorage) {
   return readIds(storage).includes(id)
 }
 
-// Adds a movie at the bottom of the list. (Head-to-head placement replaces
-// this in the ranking PR.) Adding a movie that's already there does nothing.
-export function addMovie(id, storage = globalThis.localStorage) {
+// Puts a movie at a given spot in the list (0 = best), e.g. where head-to-head
+// placement landed it. Adding a movie that's already there does nothing.
+export function insertMovie(id, index, storage = globalThis.localStorage) {
   if (!BY_ID.has(id)) throw new Error(`Unknown movie: ${id}`)
   const ids = readIds(storage)
   if (ids.includes(id)) return getMyList(storage)
-  writeIds([...ids, id], storage)
+  const at = Math.max(0, Math.min(index, ids.length))
+  writeIds([...ids.slice(0, at), id, ...ids.slice(at)], storage)
   return getMyList(storage)
+}
+
+// Adds a movie at the bottom of the list.
+export function addMovie(id, storage = globalThis.localStorage) {
+  return insertMovie(id, Infinity, storage)
 }
 
 export function removeMovie(id, storage = globalThis.localStorage) {

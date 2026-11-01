@@ -1,14 +1,15 @@
-import { useEffect, useId, useRef } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import Poster from './Poster.jsx'
 import { tierRanks } from '../features/ranking/binaryInsertion.js'
 import { scoreTiers } from '../features/ranking/scores.js'
-import { getCommunityStats, imageUrl, posterUrl } from '../lib/localStore.js'
+import { fetchCommunityStats } from '../lib/leaderboard.js'
+import { imageUrl, posterUrl } from '../lib/localStore.js'
 import { formatRuntime } from '../lib/movieDetails.js'
 import { useMyTiers } from '../lib/useMyList.js'
 
 // Details panel for one movie: backdrop, overview, credits, where the user
-// ranked it, and how the community ranks it. Everything comes from the local
-// catalog, so opening it makes no network calls besides loading images.
+// ranked it, and how the community ranks it. Movie info comes from the local
+// catalog; only the community line is loaded from the database.
 export default function MovieDetails({ movie, onClose, onRank, onRerank }) {
   const tiers = useMyTiers()
   const titleId = useId()
@@ -20,10 +21,24 @@ export default function MovieDetails({ movie, onClose, onRank, onRerank }) {
   const myRank = ranked ? tierRanks(tiers)[tierIndex] : null
   const myScore = ranked ? scoreTiers(tiers)?.get(movie.id) ?? null : null
   const tied = ranked && tiers[tierIndex].length > 1
-  const community = getCommunityStats(movie.id)
+  // { id, weekly, monthly } once loaded. If it fails, the line just stays hidden:
+  // it's extra info, and the rest of the panel works without it.
+  const [communityFor, setCommunityFor] = useState(null)
+  const community = communityFor?.id === movie.id ? communityFor : { weekly: null, monthly: null }
   const runtime = formatRuntime(movie.runtime)
   const backdrop = imageUrl(movie.backdrop_path, 'w780')
   const facts = [movie.year, runtime, movie.genres?.join(', ')].filter(Boolean)
+
+  useEffect(() => {
+    let current = true
+    fetchCommunityStats(movie.id).then(
+      (stats) => current && setCommunityFor({ id: movie.id, ...stats }),
+      () => {},
+    )
+    return () => {
+      current = false
+    }
+  }, [movie.id, tiers])
 
   useEffect(() => {
     closeButton.current?.focus()

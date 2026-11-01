@@ -1,10 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import MOVIES from '../../src/data/movies.json'
-import { LEADERBOARD } from '../../src/data/leaderboard.js'
 import {
-  getLeaderboard,
-  getMovie,
-  PERIODS,
+  getSuggestions,
   posterUrl,
   searchMovies,
 } from '../../src/lib/localStore.js'
@@ -16,40 +13,15 @@ describe('movie catalog', () => {
     expect(new Set(ids(MOVIES)).size).toBe(MOVIES.length)
   })
 
-  it('has every leaderboard movie', () => {
-    for (const period of PERIODS) {
-      for (const row of LEADERBOARD[period]) expect(getMovie(row.movieId)).not.toBeNull()
-    }
+  it('has every suggested movie', () => {
+    const suggestions = getSuggestions()
+    expect(suggestions).toHaveLength(8)
+    expect(suggestions.every(Boolean)).toBe(true)
   })
 
   it('builds TMDb poster URLs only when a poster path exists', () => {
     expect(posterUrl({ poster_path: '/abc.jpg' }, 'w154')).toBe('https://image.tmdb.org/t/p/w154/abc.jpg')
     expect(posterUrl({ poster_path: null })).toBeNull()
-  })
-})
-
-describe('getLeaderboard', () => {
-  it('returns rows for every period with ranks starting at 1', () => {
-    for (const period of PERIODS) {
-      const rows = getLeaderboard(period)
-      expect(rows.length).toBeGreaterThan(0)
-      expect(rows.map((r) => r.rank)).toEqual(rows.map((_, i) => i + 1))
-      expect(rows.every((r) => r.title)).toBe(true)
-    }
-  })
-
-  it('orders highest-ranked by score, descending', () => {
-    const scores = getLeaderboard('weekly', 'highest').map((r) => r.score)
-    expect(scores).toEqual([...scores].sort((a, b) => b - a))
-  })
-
-  it('orders most-watched by number of rankers, descending', () => {
-    const counts = getLeaderboard('monthly', 'watched').map((r) => r.rankers)
-    expect(counts).toEqual([...counts].sort((a, b) => b - a))
-  })
-
-  it('throws on an unknown period', () => {
-    expect(() => getLeaderboard('yearly')).toThrow()
   })
 })
 

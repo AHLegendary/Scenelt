@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { formatRuntime, hasDetails, pickDetails, pickSimilar } from '../../src/lib/movieDetails.js'
-import { getCommunityStats, imageUrl } from '../../src/lib/localStore.js'
+import { imageUrl } from '../../src/lib/localStore.js'
 
 describe('pickDetails', () => {
   const raw = {
@@ -73,18 +73,6 @@ describe('hasDetails', () => {
     expect(hasDetails({ title: 'X' })).toBe(false)
     expect(hasDetails({ title: 'X', overview: null })).toBe(true)
     expect(hasDetails(null)).toBe(false)
-  })
-})
-
-describe('getCommunityStats', () => {
-  it('reports weekly and monthly rank for a listed movie', () => {
-    const stats = getCommunityStats('oppenheimer-2023')
-    expect(stats.monthly.rank).toBe(1)
-    expect(stats.weekly).toMatchObject({ rank: 4, score: 8.7 })
-  })
-
-  it('is null for periods where the movie is not listed', () => {
-    expect(getCommunityStats('up-2009')).toEqual({ weekly: null, monthly: null })
   })
 })
 

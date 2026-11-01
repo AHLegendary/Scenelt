@@ -5,7 +5,7 @@ import { getCatalog, posterUrl } from '../lib/localStore.js'
 import { useMyTiers } from '../lib/useMyList.js'
 
 // Personalized recommendations, unlocked at 15 ranked movies. Cards open the
-// movie details panel, where the guest can rank them.
+// movie details panel, where the user can rank them.
 export default function ForYouPage({ onOpen, onAdd }) {
   const tiers = useMyTiers()
   const recs = useMemo(() => buildRecommendations(tiers, getCatalog()), [tiers])

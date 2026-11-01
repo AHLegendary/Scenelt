@@ -3,9 +3,13 @@ import './App.css'
 import MovieDetails from './components/MovieDetails.jsx'
 import SearchDialog from './components/SearchDialog.jsx'
 import CompareView from './features/ranking/CompareView.jsx'
+import AccountBadge from './components/AccountBadge.jsx'
 import Sidebar from './components/Sidebar.jsx'
+import { PageStatus, SignInPrompt } from './components/SignInPrompt.jsx'
 import { getMovie } from './lib/localStore.js'
-import { PAGES } from './lib/pages.js'
+import { PAGES, PUBLIC_PAGES } from './lib/pages.js'
+import { loadMyList } from './lib/supabaseStore.js'
+import { useAccount } from './lib/useMyList.js'
 import ForYouPage from './pages/ForYouPage.jsx'
 import LeaderboardPage from './pages/LeaderboardPage.jsx'
 import MyListPage from './pages/MyListPage.jsx'
@@ -20,6 +24,8 @@ function pageFromHash() {
 }
 
 function App() {
+  const account = useAccount()
+  const signedIn = account.status === 'ready'
   const [page, setPage] = useState(pageFromHash)
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearch = useCallback(() => setSearchOpen(true), [])
@@ -33,14 +39,18 @@ function App() {
   const detailsMovie = detailsId ? getMovie(detailsId) : null
 
   // Picking a movie in search starts the head-to-head flow for it.
+  // Ranking needs an account, so logged-out users go to My List, which
+  // shows the sign-in prompt.
   function startRanking(movie) {
     setSearchOpen(false)
     setDetailsId(null)
+    if (!signedIn) return navigate('my-list')
     setRanking({ movie, rerank: false })
   }
 
   function startRerank(movie) {
     setDetailsId(null)
+    if (!signedIn) return navigate('my-list')
     setRanking({ movie, rerank: true })
   }
 
@@ -66,12 +76,15 @@ function App() {
       <Sidebar current={page} onNavigate={navigate} />
       <main className="main">
         <div className="topbar">
-          <span className="guest" title="You're browsing as a guest. Your list is saved in this browser.">
-            <span className="guest__dot" aria-hidden="true" />
-            Guest
-          </span>
+          <AccountBadge account={account} />
         </div>
-        {page === 'my-list' ? (
+        {!PUBLIC_PAGES.has(page) && account.status === 'loading' ? (
+          <PageStatus>Loading your list…</PageStatus>
+        ) : !PUBLIC_PAGES.has(page) && account.status === 'signed-out' ? (
+          <SignInPrompt />
+        ) : !PUBLIC_PAGES.has(page) && account.status === 'error' ? (
+          <PageStatus error onRetry={loadMyList}>{account.error}</PageStatus>
+        ) : page === 'my-list' ? (
           <MyListPage onAdd={openSearch} onRerank={startRerank} onOpen={openDetails} highlightId={justRanked} />
         ) : page === 'for-you' ? (
           <ForYouPage onOpen={openDetails} onAdd={openSearch} />

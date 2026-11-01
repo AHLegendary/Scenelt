@@ -2,29 +2,12 @@ import { describe, it, expect } from 'vitest'
 import MOVIES from '../../src/data/movies.json'
 import { LEADERBOARD } from '../../src/data/leaderboard.js'
 import {
-  addMovie,
   getLeaderboard,
   getMovie,
-  getMyList,
-  getMyTiers,
-  insertMovie,
-  placeMovie,
-  isInList,
   PERIODS,
   posterUrl,
-  removeMovie,
   searchMovies,
-  subscribe,
 } from '../../src/lib/localStore.js'
-
-// In-memory stand-in for localStorage.
-function memoryStorage(initial = {}) {
-  const data = { ...initial }
-  return {
-    getItem: (k) => (k in data ? data[k] : null),
-    setItem: (k, v) => { data[k] = String(v) },
-  }
-}
 
 const ids = (movies) => movies.map((m) => m.id)
 
@@ -96,132 +79,5 @@ describe('searchMovies', () => {
 
   it('returns nothing when no title matches', () => {
     expect(searchMovies('zzzz-not-a-movie')).toEqual([])
-  })
-})
-
-describe('my list', () => {
-  it('is empty when nothing is stored', () => {
-    expect(getMyList(memoryStorage())).toEqual([])
-  })
-
-  it('adds movies at the bottom, in order', () => {
-    const storage = memoryStorage()
-    addMovie('whiplash-2014', storage)
-    addMovie('parasite-2019', storage)
-    expect(ids(getMyList(storage))).toEqual(['whiplash-2014', 'parasite-2019'])
-    expect(isInList('parasite-2019', storage)).toBe(true)
-  })
-
-  it('does not add the same movie twice', () => {
-    const storage = memoryStorage()
-    addMovie('whiplash-2014', storage)
-    addMovie('whiplash-2014', storage)
-    expect(getMyList(storage)).toHaveLength(1)
-  })
-
-  it('rejects movies that are not in the catalog', () => {
-    expect(() => addMovie('not-a-movie', memoryStorage())).toThrow()
-  })
-
-  it('inserts a movie at a given position', () => {
-    const storage = memoryStorage()
-    for (const id of ['whiplash-2014', 'up-2009']) addMovie(id, storage)
-    insertMovie('parasite-2019', 1, storage)
-    insertMovie('coco-2017', 0, storage)
-    expect(ids(getMyList(storage))).toEqual(['coco-2017', 'whiplash-2014', 'parasite-2019', 'up-2009'])
-  })
-
-  it('clamps out-of-range positions', () => {
-    const storage = memoryStorage()
-    insertMovie('whiplash-2014', 99, storage)
-    insertMovie('up-2009', -3, storage)
-    expect(ids(getMyList(storage))).toEqual(['up-2009', 'whiplash-2014'])
-  })
-
-  it('removes a movie and keeps the rest in order', () => {
-    const storage = memoryStorage()
-    for (const id of ['whiplash-2014', 'parasite-2019', 'up-2009']) addMovie(id, storage)
-    removeMovie('parasite-2019', storage)
-    expect(ids(getMyList(storage))).toEqual(['whiplash-2014', 'up-2009'])
-  })
-
-  it('notifies subscribers when the list changes', () => {
-    const storage = memoryStorage()
-    let calls = 0
-    const unsubscribe = subscribe(() => { calls += 1 })
-    addMovie('whiplash-2014', storage)
-    removeMovie('whiplash-2014', storage)
-    unsubscribe()
-    addMovie('up-2009', storage)
-    expect(calls).toBe(2)
-  })
-
-  it('falls back to empty on corrupt or non-list data', () => {
-    expect(getMyList(memoryStorage({ 'sceneit.myList': '{not json' }))).toEqual([])
-    expect(getMyList(memoryStorage({ 'sceneit.myList': '{"a":1}' }))).toEqual([])
-  })
-
-  it('drops stored ids that are no longer in the catalog', () => {
-    const storage = memoryStorage({ 'sceneit.myList': '["gone-1999","up-2009"]' })
-    expect(ids(getMyList(storage))).toEqual(['up-2009'])
-  })
-
-  it('falls back to empty when storage is unavailable', () => {
-    expect(getMyList(null)).toEqual([])
-  })
-})
-
-const tierIds = (tiers) => tiers.map((tier) => tier.map((m) => m.id))
-
-describe('tiers and placement', () => {
-  it('reads the older flat format as one movie per tier', () => {
-    const storage = memoryStorage({ 'sceneit.myList': '["whiplash-2014","up-2009"]' })
-    expect(tierIds(getMyTiers(storage))).toEqual([['whiplash-2014'], ['up-2009']])
-  })
-
-  it('reads tied tiers and flattens them for getMyList', () => {
-    const storage = memoryStorage({ 'sceneit.myList': '[["coco-2017"],["whiplash-2014","up-2009"]]' })
-    expect(tierIds(getMyTiers(storage))).toEqual([['coco-2017'], ['whiplash-2014', 'up-2009']])
-    expect(ids(getMyList(storage))).toEqual(['coco-2017', 'whiplash-2014', 'up-2009'])
-  })
-
-  it('drops duplicate ids, unknown ids and empty tiers when reading', () => {
-    const storage = memoryStorage({ 'sceneit.myList': '[["up-2009"],["nope-1"],[],["up-2009","coco-2017","coco-2017"],[5]]' })
-    expect(tierIds(getMyTiers(storage))).toEqual([['up-2009'], ['coco-2017']])
-  })
-
-  it('places a movie into an existing tier as a tie', () => {
-    const storage = memoryStorage()
-    for (const id of ['coco-2017', 'whiplash-2014']) addMovie(id, storage)
-    placeMovie('up-2009', { index: 1, tied: true }, storage)
-    expect(tierIds(getMyTiers(storage))).toEqual([['coco-2017'], ['whiplash-2014', 'up-2009']])
-  })
-
-  it('moves an already ranked movie when placing it again (rerank)', () => {
-    const storage = memoryStorage()
-    for (const id of ['coco-2017', 'whiplash-2014', 'up-2009']) addMovie(id, storage)
-    // Rerank Up to the top: comparisons ran against the list without it.
-    placeMovie('up-2009', { index: 0 }, storage)
-    expect(tierIds(getMyTiers(storage))).toEqual([['up-2009'], ['coco-2017'], ['whiplash-2014']])
-  })
-
-  it('reranking a tied movie leaves the rest of its tier in place', () => {
-    const storage = memoryStorage({ 'sceneit.myList': '[["coco-2017"],["whiplash-2014","up-2009"]]' })
-    placeMovie('up-2009', { index: 0, tied: true }, storage)
-    expect(tierIds(getMyTiers(storage))).toEqual([['coco-2017', 'up-2009'], ['whiplash-2014']])
-  })
-
-  it('does not move an already ranked movie through insertMovie', () => {
-    const storage = memoryStorage()
-    for (const id of ['coco-2017', 'whiplash-2014']) addMovie(id, storage)
-    insertMovie('whiplash-2014', 0, storage)
-    expect(ids(getMyList(storage))).toEqual(['coco-2017', 'whiplash-2014'])
-  })
-
-  it('removing the last movie of a tier removes the tier', () => {
-    const storage = memoryStorage({ 'sceneit.myList': '[["coco-2017"],["whiplash-2014","up-2009"],["her-2013"]]' })
-    removeMovie('coco-2017', storage)
-    removeMovie('up-2009', storage)
-    expect(tierIds(getMyTiers(storage))).toEqual([['whiplash-2014'], ['her-2013']])
   })
 })

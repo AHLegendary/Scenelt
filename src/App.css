@@ -62,7 +62,12 @@
   align-items: center;
   min-height: 44px;
 }
-.guest {
+.account-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.account {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -75,12 +80,37 @@
   font-weight: 600;
   color: var(--ink-2);
 }
-.guest__dot {
+.account__dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--line-2);
 }
+.account--in .account__dot { background: #2f8f5b; }
+.account__error { font-size: 13px; color: #b3261e; }
+
+/* ------------------------------------------------------------------ notices */
+/* Inline status/error banner, e.g. "Couldn't save your ranking." */
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line);
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.notice--error {
+  background: #fdf1f0;
+  box-shadow: 0 0 0 1px #f0c4bf;
+  color: #8c1d16;
+}
+.placed__save { font-size: 13px; color: var(--ink-3); }
+.row__btn:disabled { opacity: 0.5; cursor: default; }
 
 /* ------------------------------------------------------------------ page */
 .page {
@@ -315,7 +345,7 @@
   .logo { padding: 0 4px; font-size: 22px; }
   .sidebar__tabs { flex-direction: row; gap: 4px; }
   .sidebar__tab { height: 40px; padding: 0 14px; font-size: 15px; border-radius: var(--r-pill); }
-  .topbar { display: none; }
+  .topbar { min-height: 0; }
   .page__title { font-size: 32px; }
   .page__controls { width: 100%; }
   .seg { max-width: 100%; overflow-x: auto; }

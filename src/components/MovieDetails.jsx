@@ -6,7 +6,7 @@ import { getCommunityStats, imageUrl, posterUrl } from '../lib/localStore.js'
 import { formatRuntime } from '../lib/movieDetails.js'
 import { useMyTiers } from '../lib/useMyList.js'
 
-// Details panel for one movie: backdrop, overview, credits, where the guest
+// Details panel for one movie: backdrop, overview, credits, where the user
 // ranked it, and how the community ranks it. Everything comes from the local
 // catalog, so opening it makes no network calls besides loading images.
 export default function MovieDetails({ movie, onClose, onRank, onRerank }) {

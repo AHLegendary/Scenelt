@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import Poster from '../../components/Poster.jsx'
-import { getMyTiers, placeMovie, posterUrl } from '../../lib/localStore.js'
+import { posterUrl } from '../../lib/localStore.js'
+import { getMyTiers, placeMovie } from '../../lib/supabaseStore.js'
 import {
   answer,
   applyPlacement,
@@ -26,6 +27,7 @@ function rankOf(tiers, id) {
 // Full-screen head-to-head flow for placing one movie in My List: a newly
 // watched movie, or one being reranked. The list is only saved once the last
 // comparison is answered, so closing early leaves the ranking untouched.
+// If the save fails, the result screen says so and offers a retry.
 export default function CompareView({ movie, rerank = false, onClose, onRankAnother, onSeeList }) {
   // Snapshot the list once. When reranking, the movie is compared against
   // everything except itself.
@@ -35,7 +37,9 @@ export default function CompareView({ movie, rerank = false, onClose, onRankAnot
     return { oldRank: rerank ? rankOf(current, movie.id) : null, start: startInsertion(others, movie) }
   })
   const [history, setHistory] = useState([setup.start])
-  const saved = useRef(false)
+  const saveStarted = useRef(false)
+  // 'saving' | 'saved' | 'failed'
+  const [saveStatus, setSaveStatus] = useState('saving')
   const titleId = useId()
 
   const state = history[history.length - 1]
@@ -51,13 +55,23 @@ export default function CompareView({ movie, rerank = false, onClose, onRankAnot
     setHistory((h) => (h.length > 1 ? h.slice(0, -1) : h))
   }
 
-  // Save exactly once, when the last comparison is answered.
-  useEffect(() => {
-    if (done && !saved.current) {
-      saved.current = true
-      placeMovie(movie.id, finalPlacement(state))
+  async function save() {
+    setSaveStatus('saving')
+    try {
+      await placeMovie(movie.id, finalPlacement(state))
+      setSaveStatus('saved')
+    } catch {
+      setSaveStatus('failed')
     }
-  }, [done, movie.id, state])
+  }
+
+  // Save once, when the last comparison is answered. Retries go through save().
+  useEffect(() => {
+    if (done && !saveStarted.current) {
+      saveStarted.current = true
+      save()
+    }
+  })
 
   useEffect(() => {
     const onKey = (e) => {
@@ -92,6 +106,8 @@ export default function CompareView({ movie, rerank = false, onClose, onRankAnot
             tiers={applyPlacement(state.tiers, movie, finalPlacement(state))}
             tied={finalPlacement(state).tied}
             oldRank={setup.oldRank}
+            saveStatus={saveStatus}
+            onRetry={save}
             onRankAnother={onRankAnother}
             onSeeList={onSeeList}
           />
@@ -143,7 +159,7 @@ function PickCard({ movie, badge, onPick, hint }) {
 
 // Result screen: where the movie landed, its score once unlocked, and the
 // movies around it for context.
-function Placed({ titleId, movie, tiers, tied, oldRank, onRankAnother, onSeeList }) {
+function Placed({ titleId, movie, tiers, tied, oldRank, saveStatus, onRetry, onRankAnother, onSeeList }) {
   const ranks = tierRanks(tiers)
   const rows = tiers.flatMap((tier, i) => tier.map((m) => ({ movie: m, rank: ranks[i], tier: i })))
   const at = rows.findIndex((r) => r.movie.id === movie.id)
@@ -197,14 +213,30 @@ function Placed({ titleId, movie, tiers, tied, oldRank, onRankAnother, onSeeList
         ))}
       </ol>
 
+      {saveStatus === 'saving' && (
+        <p className="placed__save" role="status">Saving…</p>
+      )}
+      {saveStatus === 'failed' && (
+        <div className="notice notice--error" role="alert">
+          <span>Couldn't save your ranking. Check your connection and try again.</span>
+          <button type="button" className="btn btn--sm" onClick={onRetry} autoFocus>Try again</button>
+        </div>
+      )}
+
       <div className="placed__actions">
         {onRankAnother ? (
           <>
-            <button type="button" className="btn btn--light" onClick={onSeeList}>See my list</button>
-            <button type="button" className="btn" onClick={onRankAnother} autoFocus>Rank another</button>
+            <button type="button" className="btn btn--light" onClick={onSeeList} disabled={saveStatus !== 'saved'}>
+              See my list
+            </button>
+            <button type="button" className="btn" onClick={onRankAnother} disabled={saveStatus !== 'saved'} autoFocus>
+              Rank another
+            </button>
           </>
         ) : (
-          <button type="button" className="btn" onClick={onSeeList} autoFocus>Done</button>
+          <button type="button" className="btn" onClick={onSeeList} disabled={saveStatus !== 'saved'} autoFocus>
+            Done
+          </button>
         )}
       </div>
     </div>

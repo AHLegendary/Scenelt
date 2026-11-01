@@ -4,3 +4,6 @@ export const PAGES = [
   { id: 'my-list', label: 'My List' },
   { id: 'for-you', label: 'For You' },
 ]
+
+// Pages anyone can see without logging in. Everything else needs an account.
+export const PUBLIC_PAGES = new Set(['leaderboard'])

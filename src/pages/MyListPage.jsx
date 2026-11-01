@@ -1,10 +1,12 @@
+import { useState } from 'react'
 import Poster from '../components/Poster.jsx'
 import { tierRanks } from '../features/ranking/binaryInsertion.js'
 import { moviesUntilScores, SCORE_UNLOCK, scoreTiers } from '../features/ranking/scores.js'
-import { posterUrl, removeMovie } from '../lib/localStore.js'
+import { posterUrl } from '../lib/localStore.js'
+import { removeMovie } from '../lib/supabaseStore.js'
 import { useMyTiers } from '../lib/useMyList.js'
 
-// The guest's own ranked list. Starts empty; "Rank a movie" opens search.
+// The signed-in user's ranked list. Starts empty; "Rank a movie" opens search.
 // Tied movies share a rank. Scores appear once 10+ movies are ranked.
 // highlightId briefly marks the movie that was just ranked.
 export default function MyListPage({ onAdd, onRerank, onOpen, highlightId }) {
@@ -13,6 +15,20 @@ export default function MyListPage({ onAdd, onRerank, onOpen, highlightId }) {
   const count = tiers.reduce((n, tier) => n + tier.length, 0)
   const scores = scoreTiers(tiers)
   const toUnlock = moviesUntilScores(count)
+  const [removing, setRemoving] = useState(null) // id of the movie being removed
+  const [removeError, setRemoveError] = useState(null)
+
+  async function remove(movie) {
+    setRemoving(movie.id)
+    setRemoveError(null)
+    try {
+      await removeMovie(movie.id)
+    } catch (error) {
+      setRemoveError(error.message)
+    } finally {
+      setRemoving(null)
+    }
+  }
 
   return (
     <section className="page">
@@ -31,6 +47,13 @@ export default function MyListPage({ onAdd, onRerank, onOpen, highlightId }) {
           </button>
         )}
       </header>
+
+      {removeError && (
+        <div className="notice notice--error" role="alert">
+          <span>{removeError}</span>
+          <button type="button" className="row__btn" onClick={() => setRemoveError(null)}>Dismiss</button>
+        </div>
+      )}
 
       {count > 0 && !scores && (
         <div className="unlock" role="status">
@@ -95,8 +118,14 @@ export default function MyListPage({ onAdd, onRerank, onOpen, highlightId }) {
                           Rerank
                         </button>
                       )}
-                      <button type="button" className="row__btn" onClick={() => removeMovie(movie.id)} aria-label={`Remove ${movie.title}`}>
-                        Remove
+                      <button
+                        type="button"
+                        className="row__btn"
+                        onClick={() => remove(movie)}
+                        disabled={removing !== null}
+                        aria-label={`Remove ${movie.title}`}
+                      >
+                        {removing === movie.id ? 'Removing…' : 'Remove'}
                       </button>
                     </div>
                     {scores && (

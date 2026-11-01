@@ -1,7 +1,7 @@
-// Personalized recommendations from a guest's ranked list.
+// Personalized recommendations from a user's ranked list.
 //
 // Every unranked movie in the catalog gets a score from how related it is to
-// the movies the guest has ranked, weighted by where they ranked them:
+// the movies the user has ranked, weighted by where they ranked them:
 // relatives of top movies count for it, relatives of bottom movies count
 // against it. Two movies are related when TMDb lists one as a recommendation
 // for the other (the `similar` field, filled by npm run movie-data) and,
@@ -71,7 +71,7 @@ export function scoreCandidates(tiers, catalog) {
 }
 
 // The recommendations page: a top-picks row plus "Because you ranked X
-// highly" rows for the guest's favorites. Movies don't repeat across rows.
+// highly" rows for the user's favorites. Movies don't repeat across rows.
 // Returns { locked: true, remaining } until RECS_UNLOCK movies are ranked.
 export function buildRecommendations(tiers, catalog, { unlockAt = RECS_UNLOCK, perRow = 6, becauseRows = 3 } = {}) {
   const count = tiers.reduce((n, tier) => n + tier.length, 0)
@@ -89,7 +89,7 @@ export function buildRecommendations(tiers, catalog, { unlockAt = RECS_UNLOCK, p
   const top = take(scored)
   if (top.length) rows.push({ id: 'top', title: 'Top picks for you', items: top })
 
-  // Favorites = the guest's top-ranked movies, best first.
+  // Favorites = the user's top-ranked movies, best first.
   for (const fav of tiers.flat().slice(0, becauseRows)) {
     const related = scored.filter((s) => relatedness(fav, s.movie) > 0)
     const items = take(related)

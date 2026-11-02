@@ -24,7 +24,14 @@
       "Josh Brolin",
       "Austin Butler"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt15239678",
+    "ratings": {
+      "imdb": 8.4,
+      "imdb_votes": 797737,
+      "rt": 92,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "past-lives-2023",
@@ -51,7 +58,14 @@
       "Leem Seung-min",
       "Yoon Ji-hye"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt13238346",
+    "ratings": {
+      "imdb": 7.8,
+      "imdb_votes": 178799,
+      "rt": 95,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "spider-man-across-the-spider-verse-2023",
@@ -82,7 +96,14 @@
     ],
     "similar": [
       "spider-man-into-the-spider-verse-2018"
-    ]
+    ],
+    "imdb_id": "tt9362722",
+    "ratings": {
+      "imdb": 8.5,
+      "imdb_votes": 556793,
+      "rt": 95,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "oppenheimer-2023",
@@ -109,7 +130,14 @@
       "Florence Pugh",
       "Josh Hartnett"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt15398776",
+    "ratings": {
+      "imdb": 8.2,
+      "imdb_votes": 1103487,
+      "rt": 93,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-holdovers-2023",
@@ -136,7 +164,14 @@
       "Brady Hepner",
       "Ian Dolley"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt14849194",
+    "ratings": {
+      "imdb": 7.9,
+      "imdb_votes": 274784,
+      "rt": 97,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "everything-everywhere-all-at-once-2022",
@@ -164,7 +199,14 @@
       "Jamie Lee Curtis",
       "Tallie Medel"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt6710474",
+    "ratings": {
+      "imdb": 7.7,
+      "imdb_votes": 663149,
+      "rt": 93,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "parasite-2019",
@@ -191,7 +233,14 @@
       "Park So-dam",
       "Lee Jung-eun"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt6751668",
+    "ratings": {
+      "imdb": 8.5,
+      "imdb_votes": 1200817,
+      "rt": 99,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "whiplash-2014",
@@ -218,7 +267,14 @@
       "Austin Stowell",
       "Nate Lang"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt2582802",
+    "ratings": {
+      "imdb": 8.5,
+      "imdb_votes": 1185509,
+      "rt": 94,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "anatomy-of-a-fall-2023",
@@ -245,7 +301,14 @@
       "Samuel Theis",
       "Jehnny Beth"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt17009710",
+    "ratings": {
+      "imdb": 7.6,
+      "imdb_votes": 238729,
+      "rt": 96,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "poor-things-2023",
@@ -272,7 +335,14 @@
       "Christopher Abbott",
       "Suzy Bemba"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt14230458",
+    "ratings": {
+      "imdb": 7.7,
+      "imdb_votes": 424704,
+      "rt": 92,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "interstellar-2014",
@@ -301,7 +371,14 @@
     ],
     "similar": [
       "avengers-endgame-2019"
-    ]
+    ],
+    "imdb_id": "tt0816692",
+    "ratings": {
+      "imdb": 8.7,
+      "imdb_votes": 2617722,
+      "rt": 73,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-dark-knight-2008",
@@ -328,7 +405,14 @@
       "Maggie Gyllenhaal",
       "Gary Oldman"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0468569",
+    "ratings": {
+      "imdb": 9.1,
+      "imdb_votes": 3236507,
+      "rt": 94,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "get-out-2017",
@@ -355,7 +439,14 @@
       "Caleb Landry Jones",
       "Marcus Henderson"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt5052448",
+    "ratings": {
+      "imdb": 7.8,
+      "imdb_votes": 840575,
+      "rt": 98,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "la-la-land-2016",
@@ -382,7 +473,14 @@
       "Finn Wittrock",
       "Callie Hernandez"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt3783958",
+    "ratings": {
+      "imdb": 8,
+      "imdb_votes": 780882,
+      "rt": 91,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "inception-2010",
@@ -409,7 +507,14 @@
       "Elliot Page",
       "Dileep Rao"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1375666",
+    "ratings": {
+      "imdb": 8.8,
+      "imdb_votes": 2877173,
+      "rt": 86,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "pulp-fiction-1994",
@@ -436,7 +541,14 @@
       "Ving Rhames",
       "Harvey Keitel"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0110912",
+    "ratings": {
+      "imdb": 8.8,
+      "imdb_votes": 2473737,
+      "rt": 92,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-godfather-1972",
@@ -465,7 +577,14 @@
     ],
     "similar": [
       "goodfellas-1990"
-    ]
+    ],
+    "imdb_id": "tt0068646",
+    "ratings": {
+      "imdb": 9.2,
+      "imdb_votes": 2262742,
+      "rt": 97,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-shawshank-redemption-1994",
@@ -493,7 +612,14 @@
     ],
     "similar": [
       "goodfellas-1990"
-    ]
+    ],
+    "imdb_id": "tt0111161",
+    "ratings": {
+      "imdb": 9.3,
+      "imdb_votes": 3235958,
+      "rt": 89,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "fight-club-1999",
@@ -520,7 +646,14 @@
       "Jared Leto",
       "Zach Grenier"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0137523",
+    "ratings": {
+      "imdb": 8.8,
+      "imdb_votes": 2669989,
+      "rt": 81,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-matrix-1999",
@@ -548,7 +681,14 @@
       "Gloria Foster",
       "Joe Pantoliano"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0133093",
+    "ratings": {
+      "imdb": 8.7,
+      "imdb_votes": 2284373,
+      "rt": 83,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "spirited-away-2001",
@@ -575,7 +715,14 @@
       "Yasuko Sawaguchi",
       "Tatsuya Gashuin"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0245429",
+    "ratings": {
+      "imdb": 8.6,
+      "imdb_votes": 988028,
+      "rt": 96,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "barbie-2023",
@@ -602,7 +749,14 @@
       "Issa Rae",
       "Kate McKinnon"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1517268",
+    "ratings": {
+      "imdb": 6.8,
+      "imdb_votes": 707713,
+      "rt": 88,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "toy-story-1995",
@@ -629,7 +783,14 @@
       "Wallace Shawn",
       "John Ratzenberger"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0114709",
+    "ratings": {
+      "imdb": 8.3,
+      "imdb_votes": 1202148,
+      "rt": 100,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "titanic-1997",
@@ -656,7 +817,14 @@
       "Frances Fisher",
       "Gloria Stuart"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0120338",
+    "ratings": {
+      "imdb": 8,
+      "imdb_votes": 1415842,
+      "rt": 88,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-social-network-2010",
@@ -682,7 +850,14 @@
       "Rooney Mara",
       "Max Minghella"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1285016",
+    "ratings": {
+      "imdb": 7.8,
+      "imdb_votes": 831142,
+      "rt": 96,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "her-2013",
@@ -712,7 +887,14 @@
     "similar": [
       "arrival-2016",
       "interstellar-2014"
-    ]
+    ],
+    "imdb_id": "tt1798709",
+    "ratings": {
+      "imdb": 7.9,
+      "imdb_votes": 735364,
+      "rt": 95,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "arrival-2016",
@@ -741,7 +923,14 @@
     ],
     "similar": [
       "interstellar-2014"
-    ]
+    ],
+    "imdb_id": "tt2543164",
+    "ratings": {
+      "imdb": 7.9,
+      "imdb_votes": 882127,
+      "rt": 94,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "mad-max-fury-road-2015",
@@ -768,7 +957,14 @@
       "Josh Helman",
       "Nathan Jones"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1392190",
+    "ratings": {
+      "imdb": 8.1,
+      "imdb_votes": 1223352,
+      "rt": 97,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "knives-out-2019",
@@ -795,7 +991,14 @@
       "Michael Shannon",
       "Don Johnson"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt8946378",
+    "ratings": {
+      "imdb": 7.9,
+      "imdb_votes": 893101,
+      "rt": 97,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "lady-bird-2017",
@@ -822,7 +1025,14 @@
       "Timothée Chalamet",
       "Beanie Feldstein"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt4925292",
+    "ratings": {
+      "imdb": 7.4,
+      "imdb_votes": 369942,
+      "rt": 99,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "moonlight-2016",
@@ -848,7 +1058,14 @@
       "Jharrel Jerome",
       "Alex R. Hibbert"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt4975722",
+    "ratings": {
+      "imdb": 7.4,
+      "imdb_votes": 356522,
+      "rt": 98,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "inside-out-2015",
@@ -878,7 +1095,14 @@
     "similar": [
       "inside-out-2-2024",
       "up-2009"
-    ]
+    ],
+    "imdb_id": "tt2096673",
+    "ratings": {
+      "imdb": 8.1,
+      "imdb_votes": 935063,
+      "rt": 98,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "up-2009",
@@ -907,7 +1131,14 @@
     ],
     "similar": [
       "inside-out-2-2024"
-    ]
+    ],
+    "imdb_id": "tt1049413",
+    "ratings": {
+      "imdb": 8.3,
+      "imdb_votes": 1258840,
+      "rt": 98,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "coco-2017",
@@ -936,7 +1167,14 @@
     ],
     "similar": [
       "up-2009"
-    ]
+    ],
+    "imdb_id": "tt2380307",
+    "ratings": {
+      "imdb": 8.4,
+      "imdb_votes": 727988,
+      "rt": 97,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-grand-budapest-hotel-2014",
@@ -963,7 +1201,14 @@
       "Willem Dafoe",
       "Mathieu Amalric"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt2278388",
+    "ratings": {
+      "imdb": 8.1,
+      "imdb_votes": 988783,
+      "rt": 92,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "blade-runner-2049-2017",
@@ -990,7 +1235,14 @@
       "Robin Wright",
       "Sylvia Hoeks"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1856101",
+    "ratings": {
+      "imdb": 8,
+      "imdb_votes": 769711,
+      "rt": 88,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "top-gun-maverick-2022",
@@ -1017,7 +1269,14 @@
       "Jon Hamm",
       "Charles Parnell"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1745960",
+    "ratings": {
+      "imdb": 8.2,
+      "imdb_votes": 908768,
+      "rt": 96,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "little-women-2019",
@@ -1044,7 +1303,14 @@
       "Laura Dern",
       "Timothée Chalamet"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt3281548",
+    "ratings": {
+      "imdb": 7.7,
+      "imdb_votes": 289485,
+      "rt": 95,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "amelie-2001",
@@ -1071,7 +1337,14 @@
       "Jamel Debbouze",
       "Clotilde Mollet"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0211915",
+    "ratings": {
+      "imdb": 8.2,
+      "imdb_votes": 848391,
+      "rt": 90,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "no-country-for-old-men-2007",
@@ -1099,7 +1372,14 @@
       "Kelly Macdonald",
       "Garret Dillahunt"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0477348",
+    "ratings": {
+      "imdb": 8.2,
+      "imdb_votes": 1216902,
+      "rt": 93,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "goodfellas-1990",
@@ -1128,7 +1408,14 @@
     ],
     "similar": [
       "the-shawshank-redemption-1994"
-    ]
+    ],
+    "imdb_id": "tt0099685",
+    "ratings": {
+      "imdb": 8.7,
+      "imdb_votes": 1417364,
+      "rt": 93,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "jurassic-park-1993",
@@ -1155,7 +1442,14 @@
       "Bob Peck",
       "Martin Ferrero"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0107290",
+    "ratings": {
+      "imdb": 8.2,
+      "imdb_votes": 1201936,
+      "rt": 91,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-lord-of-the-rings-the-fellowship-of-the-ring-2001",
@@ -1182,7 +1476,14 @@
       "Ian Holm",
       "Liv Tyler"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0120737",
+    "ratings": {
+      "imdb": 8.9,
+      "imdb_votes": 2242919,
+      "rt": 91,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "back-to-the-future-1985",
@@ -1209,7 +1510,14 @@
       "Claudia Wells",
       "Thomas F. Wilson"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0088763",
+    "ratings": {
+      "imdb": 8.5,
+      "imdb_votes": 1480321,
+      "rt": 93,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "ratatouille-2007",
@@ -1236,7 +1544,14 @@
       "Peter Sohn",
       "Peter O'Toole"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0382932",
+    "ratings": {
+      "imdb": 8.1,
+      "imdb_votes": 968813,
+      "rt": 96,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "black-swan-2010",
@@ -1263,7 +1578,14 @@
       "Winona Ryder",
       "Benjamin Millepied"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0947798",
+    "ratings": {
+      "imdb": 8,
+      "imdb_votes": 899056,
+      "rt": 85,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-truman-show-1998",
@@ -1290,7 +1612,14 @@
       "Natascha McElhone",
       "Holland Taylor"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0120382",
+    "ratings": {
+      "imdb": 8.2,
+      "imdb_votes": 1411025,
+      "rt": 94,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "superbad-2007",
@@ -1316,7 +1645,14 @@
       "Seth Rogen",
       "Martha MacIsaac"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0829482",
+    "ratings": {
+      "imdb": 7.6,
+      "imdb_votes": 705332,
+      "rt": 88,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "hereditary-2018",
@@ -1343,7 +1679,14 @@
       "Ann Dowd",
       "Mallory Bechtel"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt7784604",
+    "ratings": {
+      "imdb": 7.3,
+      "imdb_votes": 471936,
+      "rt": 90,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "aftersun-2022",
@@ -1369,7 +1712,14 @@
       "Sally Messham",
       "Ayşe Parlak"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt19770238",
+    "ratings": {
+      "imdb": 7.6,
+      "imdb_votes": 133967,
+      "rt": 96,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "challengers-2024",
@@ -1396,7 +1746,14 @@
       "Bryan Doo",
       "Shane T Harris"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt16426418",
+    "ratings": {
+      "imdb": 7,
+      "imdb_votes": 185343,
+      "rt": 88,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "wicked-2024",
@@ -1423,7 +1780,14 @@
       "Ethan Slater",
       "Marissa Bode"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt1262426",
+    "ratings": {
+      "imdb": 7.3,
+      "imdb_votes": 258310,
+      "rt": 88,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "inside-out-2-2024",
@@ -1450,7 +1814,14 @@
       "Tony Hale",
       "Lewis Black"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt22022452",
+    "ratings": {
+      "imdb": 7.5,
+      "imdb_votes": 261682,
+      "rt": 91,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "gladiator-2000",
@@ -1477,7 +1848,14 @@
       "Richard Harris",
       "Derek Jacobi"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0172495",
+    "ratings": {
+      "imdb": 8.5,
+      "imdb_votes": 1886962,
+      "rt": 80,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "avengers-endgame-2019",
@@ -1505,7 +1883,14 @@
       "Scarlett Johansson",
       "Jeremy Renner"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt4154796",
+    "ratings": {
+      "imdb": 8.4,
+      "imdb_votes": 1497908,
+      "rt": 94,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "shrek-2001",
@@ -1533,7 +1918,14 @@
       "Vincent Cassel",
       "Peter Dennis"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0126029",
+    "ratings": {
+      "imdb": 7.9,
+      "imdb_votes": 823205,
+      "rt": 89,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "the-silence-of-the-lambs-1991",
@@ -1562,7 +1954,14 @@
     ],
     "similar": [
       "goodfellas-1990"
-    ]
+    ],
+    "imdb_id": "tt0102926",
+    "ratings": {
+      "imdb": 8.6,
+      "imdb_votes": 1755718,
+      "rt": 95,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "princess-mononoke-1997",
@@ -1589,7 +1988,14 @@
       "Masahiko Nishimura",
       "Tsunehiko Kamijô"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt0119698",
+    "ratings": {
+      "imdb": 8.3,
+      "imdb_votes": 492213,
+      "rt": 94,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "portrait-of-a-lady-on-fire-2019",
@@ -1616,7 +2022,14 @@
       "Christel Baras",
       "Armande Boulanger"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt8613070",
+    "ratings": {
+      "imdb": 8,
+      "imdb_votes": 130653,
+      "rt": 98,
+      "checked": "2026-11-02"
+    }
   },
   {
     "id": "spider-man-into-the-spider-verse-2018",
@@ -1645,6 +2058,13 @@
       "Brian Tyree Henry",
       "Lily Tomlin"
     ],
-    "similar": []
+    "similar": [],
+    "imdb_id": "tt4633694",
+    "ratings": {
+      "imdb": 8.4,
+      "imdb_votes": 819638,
+      "rt": 97,
+      "checked": "2026-11-02"
+    }
   }
 ]

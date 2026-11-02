@@ -4,12 +4,13 @@ import { tierRanks } from '../features/ranking/binaryInsertion.js'
 import { scoreTiers } from '../features/ranking/scores.js'
 import { fetchCommunityStats } from '../lib/leaderboard.js'
 import { imageUrl, posterUrl } from '../lib/localStore.js'
-import { formatRuntime } from '../lib/movieDetails.js'
+import { formatRuntime, formatVotes, hasRatings } from '../lib/movieDetails.js'
 import { useMyTiers } from '../lib/useMyList.js'
 
 // Details panel for one movie: backdrop, overview, credits, where the user
-// ranked it, and how the community ranks it. Movie info comes from the local
-// catalog; only the community line is loaded from the database.
+// ranked it, how the SceneIt community ranks it, and IMDb / Rotten Tomatoes
+// scores as outside reference. Movie info and outside scores come from the
+// local catalog; only the community line is loaded from the database.
 export default function MovieDetails({ movie, onClose, onRank, onRerank }) {
   const tiers = useMyTiers()
   const titleId = useId()
@@ -27,6 +28,7 @@ export default function MovieDetails({ movie, onClose, onRank, onRerank }) {
   const community = communityFor?.id === movie.id ? communityFor : { weekly: null, monthly: null }
   const runtime = formatRuntime(movie.runtime)
   const backdrop = imageUrl(movie.backdrop_path, 'w780')
+  const outside = hasRatings(movie) ? movie.ratings : null
   const facts = [movie.year, runtime, movie.genres?.join(', ')].filter(Boolean)
 
   useEffect(() => {
@@ -106,6 +108,33 @@ export default function MovieDetails({ movie, onClose, onRank, onRerank }) {
             )}
           </div>
 
+          {outside && (
+            <section className="details__outside" aria-label="Scores outside SceneIt">
+              <h3 className="details__label">Outside SceneIt</h3>
+              <div className="details__stats">
+                {outside.imdb !== null && (
+                  <div className="stat stat--outside">
+                    <span className="stat__label">IMDb</span>
+                    <span className="stat__value">
+                      {outside.imdb.toFixed(1)}
+                      <small>
+                        /10{outside.imdb_votes ? ` · ${formatVotes(outside.imdb_votes)} votes` : ''}
+                      </small>
+                    </span>
+                  </div>
+                )}
+                {outside.rt !== null && (
+                  <div className="stat stat--outside">
+                    <span className="stat__label">Rotten Tomatoes</span>
+                    <span className="stat__value">
+                      {outside.rt}%<small> critics</small>
+                    </span>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
           {movie.overview && <p className="details__overview">{movie.overview}</p>}
 
           {(movie.directors?.length > 0 || movie.cast?.length > 0) && (
@@ -137,11 +166,18 @@ export default function MovieDetails({ movie, onClose, onRank, onRerank }) {
                 Rank it
               </button>
             )}
-            {movie.tmdb_id && (
-              <a className="details__tmdb" href={`https://www.themoviedb.org/movie/${movie.tmdb_id}`} target="_blank" rel="noreferrer">
-                View on TMDB
-              </a>
-            )}
+            <span className="details__links">
+              {movie.imdb_id && (
+                <a className="details__tmdb" href={`https://www.imdb.com/title/${movie.imdb_id}/`} target="_blank" rel="noreferrer">
+                  IMDb
+                </a>
+              )}
+              {movie.tmdb_id && (
+                <a className="details__tmdb" href={`https://www.themoviedb.org/movie/${movie.tmdb_id}`} target="_blank" rel="noreferrer">
+                  View on TMDB
+                </a>
+              )}
+            </span>
           </div>
         </div>
       </article>

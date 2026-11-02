@@ -1,5 +1,13 @@
 import { describe, it, expect } from 'vitest'
-import { formatRuntime, hasDetails, pickDetails, pickSimilar } from '../../src/lib/movieDetails.js'
+import {
+  formatRuntime,
+  formatVotes,
+  hasDetails,
+  hasRatings,
+  pickDetails,
+  pickRatings,
+  pickSimilar,
+} from '../../src/lib/movieDetails.js'
 import { imageUrl } from '../../src/lib/localStore.js'
 
 describe('pickDetails', () => {
@@ -94,5 +102,71 @@ describe('pickSimilar', () => {
   it('is empty when TMDb has no recommendations', () => {
     expect(pickSimilar({}, tmdbToId)).toEqual([])
     expect(pickSimilar({ recommendations: { results: [] } }, tmdbToId)).toEqual([])
+  })
+})
+
+describe('pickRatings', () => {
+  // Shaped like OMDb's documented response for a movie lookup.
+  const omdb = {
+    Title: 'Dune: Part Two',
+    imdbRating: '8.5',
+    imdbVotes: '642,123',
+    imdbID: 'tt15239678',
+    Ratings: [
+      { Source: 'Internet Movie Database', Value: '8.5/10' },
+      { Source: 'Rotten Tomatoes', Value: '92%' },
+      { Source: 'Metacritic', Value: '79/100' },
+    ],
+    Response: 'True',
+  }
+
+  it('reads the IMDb rating, vote count and Tomatometer as numbers', () => {
+    expect(pickRatings(omdb)).toEqual({ imdb: 8.5, imdb_votes: 642123, rt: 92 })
+  })
+
+  it('treats "N/A" and a missing Rotten Tomatoes entry as null', () => {
+    const raw = { ...omdb, imdbRating: 'N/A', imdbVotes: 'N/A', Ratings: [omdb.Ratings[0]] }
+    expect(pickRatings(raw)).toEqual({ imdb: null, imdb_votes: null, rt: null })
+  })
+
+  it('returns all nulls when OMDb could not find the movie', () => {
+    expect(pickRatings({ Response: 'False', Error: 'Incorrect IMDb ID.' })).toEqual({
+      imdb: null,
+      imdb_votes: null,
+      rt: null,
+    })
+    expect(pickRatings(null)).toEqual({ imdb: null, imdb_votes: null, rt: null })
+  })
+
+  it('keeps a 0% Tomatometer', () => {
+    const raw = { ...omdb, Ratings: [{ Source: 'Rotten Tomatoes', Value: '0%' }] }
+    expect(pickRatings(raw).rt).toBe(0)
+  })
+})
+
+describe('formatVotes', () => {
+  it('shortens large counts', () => {
+    expect(formatVotes(642123)).toBe('642K')
+    expect(formatVotes(1500000)).toBe('1.5M')
+    expect(formatVotes(2000000)).toBe('2M')
+    expect(formatVotes(999600)).toBe('1M')
+    expect(formatVotes(950)).toBe('950')
+  })
+
+  it('is null for missing counts', () => {
+    expect(formatVotes(null)).toBeNull()
+    expect(formatVotes(0)).toBeNull()
+  })
+})
+
+describe('hasRatings', () => {
+  it('is true when either outside score exists', () => {
+    expect(hasRatings({ ratings: { imdb: 8.5, rt: null } })).toBe(true)
+    expect(hasRatings({ ratings: { imdb: null, rt: 0 } })).toBe(true)
+  })
+
+  it('is false before the ratings script runs or when nothing was found', () => {
+    expect(hasRatings({})).toBe(false)
+    expect(hasRatings({ ratings: { imdb: null, rt: null } })).toBe(false)
   })
 })

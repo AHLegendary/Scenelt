@@ -44,3 +44,34 @@ export function pickSimilar(raw = {}, tmdbToId = new Map()) {
 export function hasDetails(movie) {
   return Boolean(movie && 'overview' in movie)
 }
+
+// Picks IMDb and Rotten Tomatoes scores from an OMDb response
+// (https://www.omdbapi.com/?i=tt...). OMDb writes missing values as "N/A"
+// and numbers as text ("8.5", "642,123", "92%"), so everything is parsed
+// here. Returns { imdb, imdb_votes, rt }, each a number or null.
+export function pickRatings(omdb = {}) {
+  if (!omdb || omdb.Response === 'False') return { imdb: null, imdb_votes: null, rt: null }
+  const rtEntry = (omdb.Ratings ?? []).find((r) => r.Source === 'Rotten Tomatoes')
+  const imdb = parseFloat(omdb.imdbRating)
+  const votes = parseInt(String(omdb.imdbVotes ?? '').replace(/,/g, ''), 10)
+  const rt = parseInt(rtEntry?.Value, 10)
+  return {
+    imdb: imdb >= 0 && imdb <= 10 ? imdb : null,
+    imdb_votes: votes > 0 ? votes : null,
+    rt: rt >= 0 && rt <= 100 ? rt : null,
+  }
+}
+
+// 642123 -> "642K", 1500000 -> "1.5M", 950 -> "950"
+export function formatVotes(count) {
+  if (!Number.isFinite(count) || count <= 0) return null
+  if (count >= 999500) return `${+(count / 1e6).toFixed(1)}M`
+  if (count >= 1e3) return `${Math.round(count / 1e3)}K`
+  return String(count)
+}
+
+// True when a movie has at least one outside score to show.
+export function hasRatings(movie) {
+  const r = movie?.ratings
+  return Boolean(r && (r.imdb !== null || r.rt !== null))
+}

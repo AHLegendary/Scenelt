@@ -94,6 +94,7 @@ function App() {
         <footer className="credit">
           Movie data from <a href="https://www.themoviedb.org" target="_blank" rel="noreferrer">TMDB</a>.
           This product uses the TMDB API but is not endorsed or certified by TMDB.
+          IMDb and Rotten Tomatoes scores via <a href="https://www.omdbapi.com" target="_blank" rel="noreferrer">OMDb</a>.
         </footer>
       </main>
       {searchOpen && <SearchDialog onClose={closeSearch} onPick={startRanking} onOpen={openDetails} />}

@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
-    "movie-data": "node scripts/fetch-movie-data.mjs"
+    "movie-data": "node scripts/fetch-movie-data.mjs",
+    "ratings": "node scripts/fetch-ratings.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

@@ -1,13 +1,9 @@
-// Movie catalog and demo leaderboard. UI components call these instead of
-// reading src/data directly. The signed-in user's ranked list lives in
-// supabaseStore.js; this file will shrink further once search and the
-// leaderboard come from the API and database.
+// Local movie catalog. UI components call these instead of reading src/data
+// directly. The signed-in user's ranked list lives in supabaseStore.js and
+// the leaderboard in leaderboard.js; this file will shrink further once
+// search comes from the API.
 
 import MOVIES from '../data/movies.json'
-import { LEADERBOARD } from '../data/leaderboard.js'
-
-export const PERIODS = ['weekly', 'monthly']
-export const CATEGORIES = ['highest', 'watched']
 
 const POSTER_BASE = 'https://image.tmdb.org/t/p/'
 const BY_ID = new Map(MOVIES.map((m) => [m.id, m]))
@@ -57,31 +53,18 @@ export function searchMovies(query, limit = 20) {
     .map((s) => s.movie)
 }
 
-// A few movies to show in search before the user types anything.
+// A few well-known movies to show in search before the user types anything.
+const SUGGESTION_IDS = [
+  'dune-part-two-2024',
+  'past-lives-2023',
+  'spider-man-across-the-spider-verse-2023',
+  'oppenheimer-2023',
+  'the-holdovers-2023',
+  'everything-everywhere-all-at-once-2022',
+  'parasite-2019',
+  'whiplash-2014',
+]
+
 export function getSuggestions(limit = 8) {
-  return LEADERBOARD.weekly.slice(0, limit).map((row) => getMovie(row.movieId))
-}
-
-// ------------------------------------------------------------------ leaderboard
-
-// Returns the leaderboard for a period, ordered by category:
-// 'highest' = highest community score, 'watched' = most users ranked it.
-export function getLeaderboard(period = 'weekly', category = 'highest') {
-  const rows = LEADERBOARD[period]
-  if (!rows) throw new Error(`Unknown leaderboard period: ${period}`)
-  const key = category === 'watched' ? 'rankers' : 'score'
-  return [...rows]
-    .sort((a, b) => b[key] - a[key])
-    .map((row, i) => ({ ...getMovie(row.movieId), score: row.score, rankers: row.rankers, rank: i + 1 }))
-}
-
-// How the community ranks a movie this week and this month, from the
-// leaderboard data. Each is { rank, score, rankers } or null if it isn't listed.
-export function getCommunityStats(id) {
-  const stats = {}
-  for (const period of PERIODS) {
-    const row = getLeaderboard(period, 'highest').find((r) => r.id === id)
-    stats[period] = row ? { rank: row.rank, score: row.score, rankers: row.rankers } : null
-  }
-  return stats
+  return SUGGESTION_IDS.slice(0, limit).map(getMovie).filter(Boolean)
 }

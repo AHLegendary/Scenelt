@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Poster from '../components/Poster.jsx'
 import Segmented from '../components/Segmented.jsx'
-import { getLeaderboard, posterUrl } from '../lib/localStore.js'
+import { fetchLeaderboard } from '../lib/leaderboard.js'
+import { posterUrl } from '../lib/localStore.js'
+import { useMyTiers } from '../lib/useMyList.js'
 
 const PERIOD_OPTIONS = [
   { id: 'weekly', label: 'This week' },
@@ -12,10 +14,37 @@ const CATEGORY_OPTIONS = [
   { id: 'watched', label: 'Most watched' },
 ]
 
+const EMPTY_TEXT = {
+  weekly: "No one's ranked anything this week yet. Rank a few movies to get it started.",
+  monthly: "No one's ranked anything this month yet. Rank a few movies to get it started.",
+}
+
+// Public community leaderboard from the database. Reloads when the filters
+// change, and when the signed-in user's list changes so their own rankings
+// show up right away.
 export default function LeaderboardPage({ onOpen }) {
   const [period, setPeriod] = useState('weekly')
   const [category, setCategory] = useState('highest')
-  const rows = getLeaderboard(period, category)
+  const myTiers = useMyTiers()
+  const [attempt, setAttempt] = useState(0) // bumped by "Try again"
+  // { key, rows, error }: key says which filters the result is for, so a
+  // filter change shows "Loading" instead of the previous board.
+  const [result, setResult] = useState(null)
+  const key = `${period}-${category}`
+
+  useEffect(() => {
+    let current = true // ignore answers that arrive after the filters changed
+    fetchLeaderboard(period, category).then(
+      (rows) => current && setResult({ key, rows, error: null }),
+      (error) => current && setResult({ key, rows: [], error: error.message }),
+    )
+    return () => {
+      current = false
+    }
+  }, [period, category, key, myTiers, attempt])
+
+  const loaded = result?.key === key ? result : null
+  const rows = loaded?.rows ?? []
 
   return (
     <section className="page">
@@ -30,33 +59,52 @@ export default function LeaderboardPage({ onOpen }) {
         </div>
       </header>
 
-      <ol className="board" key={`${period}-${category}`}>
-        {rows.map((movie) => (
-          <li className={`row row--link${movie.rank <= 3 ? ' is-top' : ''}`} key={movie.id} onClick={() => onOpen(movie.id)}>
-            <span className="row__rank">{movie.rank}</span>
-            <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
-            <div className="row__info">
-              <button type="button" className="row__title row__link" onClick={(e) => { e.stopPropagation(); onOpen(movie.id) }}>
-                {movie.title}
-              </button>
-              <span className="row__meta">{movie.year}</span>
-            </div>
-            <div className="row__stat">
-              {category === 'watched' ? (
-                <>
-                  <span className="row__value">{movie.rankers.toLocaleString()}</span>
-                  <span className="row__label">rankers</span>
-                </>
-              ) : (
-                <>
-                  <span className="row__value">{movie.score.toFixed(1)}</span>
-                  <span className="row__label">score</span>
-                </>
-              )}
-            </div>
-          </li>
-        ))}
-      </ol>
+      {!loaded ? (
+        <div className="notice" role="status"><span>Loading the leaderboard…</span></div>
+      ) : loaded.error ? (
+        <div className="notice notice--error" role="alert">
+          <span>{loaded.error}</span>
+          <button type="button" className="btn btn--sm" onClick={() => { setResult(null); setAttempt((n) => n + 1) }}>
+            Try again
+          </button>
+        </div>
+      ) : rows.length === 0 ? (
+        <div className="empty">
+          <div className="empty__stack" aria-hidden="true">
+            <span /><span /><span />
+          </div>
+          <h2 className="empty__title">Nothing here yet</h2>
+          <p className="empty__text">{EMPTY_TEXT[period]}</p>
+        </div>
+      ) : (
+        <ol className="board" key={key}>
+          {rows.map((movie) => (
+            <li className={`row row--link${movie.rank <= 3 ? ' is-top' : ''}`} key={movie.id} onClick={() => onOpen(movie.id)}>
+              <span className="row__rank">{movie.rank}</span>
+              <Poster title={movie.title} src={posterUrl(movie, 'w154')} size="sm" />
+              <div className="row__info">
+                <button type="button" className="row__title row__link" onClick={(e) => { e.stopPropagation(); onOpen(movie.id) }}>
+                  {movie.title}
+                </button>
+                <span className="row__meta">{movie.year}</span>
+              </div>
+              <div className="row__stat">
+                {category === 'watched' ? (
+                  <>
+                    <span className="row__value">{movie.rankers.toLocaleString()}</span>
+                    <span className="row__label">rankers</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="row__value">{movie.score.toFixed(1)}</span>
+                    <span className="row__label">score</span>
+                  </>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
     </section>
   )
 }
